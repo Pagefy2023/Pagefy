@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Livre index{% endblock %}
+
+{% block body %}
+    <h1 class="title">Livres</h1>
+
+        <a class="btnb" href="{{ path('app_livre_new') }}">+ Livre</a>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Categorie</th>
+                <th>Résumé</th>
+                <th>Couverture</th>
+                <th>Date_parution</th>
+                <th>Auteur</th>
+                <th>Editeur</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for livre in livres %}
+            <tr>
+                <td class="table-cell">{{ livre.titre }}</td>
+                <td class="table-cell">{{ livre.categorie }}</td>
+                <td class="table-cell">{{ livre.resume|split(' ')|slice(0, 15)|join(' ')  }}</td>
+                <td class="table-cell"><img src="{{ asset('assets/img/' ~ livre.couverture ) }}" width="30px" alt=""></td>
+                <td class="table-cell">{{ livre.dateParution ? livre.dateParution|date('Y-m-d H:i:s') : '' }}</td>
+                <td class="table-cell">{{ livre.auteur }}</td>
+                <td class="table-cell">{{ livre.editeur }}</td>
+                <td class="table-cell">
+                <div class="align-items">
+                    <a href="{{ path('app_livre_show', {'id': livre.id}) }}" class="button-link">Voir</a>
+                    <a href="{{ path('app_livre_edit', {'id': livre.id}) }}" class="button-link">Modifier</a>
+                    <a href="{{ path('app_livre_delete', {'id': livre.id}) }}" class="button-link-delete "
+                        onclick="event.preventDefault(); document.getElementById('delete-form-{{ livre.id }}').submit();">Supprimer</a>
+                    <form id="delete-form-{{ livre.id }}" action="{{ path('app_livre_delete', {'id': livre.id}) }}" method="POST" style="display: none;">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ livre.id) }}">
+                    </form>
+                </div>
+                        
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7" class="table-cell">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

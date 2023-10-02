@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier le Livre{% endblock %}
+
+{% block body %}
+    <h1 class="title">Modifier le Livre</h1>
+
+
+    <a class="btnb" href="{{ path('app_livre_index') }}">Revenir à la liste</a>
+
+<div class="div-form-style">
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <div class="position">
+    <button class="btnb">{{ button_label|default('Modifier') }}</button>
+    </div>
+    {{ form_end(form) }}
+
+</div>
+
+{% endblock %}

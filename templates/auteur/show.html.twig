@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Auteur{% endblock %}
+
+{% block body %}
+    <h1 class="title">Auteur</h1>
+    <div class="con-btn">
+    <a class="btn-show" href="{{ path('app_auteur_index') }}">Revenir à la liste</a>
+    <a class="btn-show" href="{{ path('app_auteur_edit', {'id': auteur.id}) }}">Modifier</a>
+    </div>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Nom</th>
+                <td class="table-cell">{{ auteur.nom }}</td>
+            </tr>
+            <tr>
+                <th>Biographie</th>
+                <td class="table-cell">{{ auteur.biographie }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

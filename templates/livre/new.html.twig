@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau Livre{% endblock %}
+
+{% block body %}
+    <h1 class="title">Nouveau Livre</h1>
+
+<div class="d-flex">
+    <a class="btnb new-prop" href="{{ path('app_auteur_new') }}"><i class="bi bi-plus-circle-dotted transparent"></i> Auteur</a>
+    <a class="btnb new-prop" href="{{ path('app_categorie_new') }}"><i class="bi bi-plus-circle-dotted transparent"></i> Categorie</a>
+</div>
+
+
+
+<div class="div-form-style">
+    <div class="form-field-center">
+        {{ form_start(form) }}
+        
+        {{ form_errors(form) }} 
+        
+        {{ form_row(form.titre) }}
+        {{ form_row(form.auteur) }}
+        {{ form_row(form.categorie) }}
+        {{ form_row(form.resume) }}
+        {{ form_row(form.couverture) }}
+        {{ form_row(form.date_parution) }}
+        {{ form_row(form.editeur) }}
+        {{ form_row(form.extrait) }}
+
+        <div class="position">
+            <button class="btn btnb">{{ button_label|default('Sauvegarder') }}</button>
+        </div>
+
+        {{ form_end(form) }}
+    </div>
+</div>
+
+
+
+{% endblock %}

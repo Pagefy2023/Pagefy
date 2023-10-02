@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PagefyController!
+{% endblock %}
+
+{% block body %}
+
+	<section id="hero">
+		<h4>#bcpDeGenres</h4>
+		<h2>Lecture en Ligne</h2>
+		<h1>Toutes  les Nouveautés</h1>
+		<p>Inscrivez vous pour un Abonnement mensuel/annuaire</p>
+		<button>Lire Maintenant</button>
+	</section>
+
+	<section id="title-genre">
+		<h2>Top Genres</h2>
+	</section>
+
+	<section id="feature" class="section-p1">
+		<div class="fe-box">
+			<h6 class=" fe-box-h6 ">Adventure</h6>
+		</div>
+		<div class="fe-box">
+			<h6 class=" fe-box-h6 ">Roman</h6>
+		</div>
+		<div class="fe-box">
+			<h6 class=" fe-box-h6 ">Mythe</h6>
+		</div>
+		<div class="fe-box">
+			<h6 class=" fe-box-h6 ">Conte</h6>
+		</div>
+		<div class="fe-box">
+			<h6 class=" fe-box-h6 ">Biographie</h6>
+		</div>
+		<div class="fe-box">
+			<h6 class=" fe-box-h6 ">Chronique</h6>
+		</div>
+	</section>
+
+	<section id="book1" class="section-p1">
+		<h2>Nouveautes dans le Monde de Lecture</h2>
+		<p>Découvrez nos Nouveautés Littéraires En Vedette</p>
+		<div class="book-container">
+        {% for livre in livres %}
+			<div class="book">
+				<img src="{{ asset('assets/img/' ~ livre.couverture) }}" alt="image du livre">
+				<div class="des">
+					<span>{{livre.categorie}}</span>
+					<h4>{{ livre.titre }}</h4>
+					<h5>{{livre.auteur}}</h5>
+				</div>
+			</div>
+        {% endfor %}
+		</div>
+	</section>
+
+	<section id="banner" class="section-m1">
+		<h4>Abonnement</h4>
+		<h2>Explorez chaque mois de nouvelles aventures littéraires à partir de
+			<span>4,99€
+			</span>
+			par mois !</h2>
+		<button class="normal">Commencer l'aventure</button>
+	</section>
+
+	<section id="book1" class="section-p1">
+		<h2>Découvrez les Livres du Moment</h2>
+		<p>Plongez dans les lectures les plus captivantes de l'heure.</p>
+		<div class="book-container">
+        {% for livre in livres %}
+			<div class="book">
+				<img src="{{ asset('assets/img/' ~ livre.couverture) }}" alt="image du livre">
+				<div class="des">
+					<span>{{livre.categorie}}</span>
+					<h4>{{ livre.titre }}</h4>
+					<h5>{{livre.auteur}}</h5>
+				</div>
+			</div>
+        {% endfor %}
+		</div>
+	</section>
+
+	<section id="sm-banner" class="section-p1">
+		<div class="banner-box">
+			<h4>
+				#romance #passions #sentiments</h4>
+			<h2>Romans</h2>
+			<span>Intrigues, émotions, relations, et voyages sentimentaux.</span>
+            <a href="/categorie/all/3" class="white btn-banner">Explorer</a>
+		</div>
+		<div class="banner-box banner-box2">
+			<h4>
+				#drame #psychologique #intrigue</h4>
+			<h2>Drames Psychologiques</h2>
+			<span>Intrigues, émotions profondes, tourments psychologiques.</span>
+			<a href="/categorie/all/6" class="white btn-banner">Explorer</a>
+		</div>
+	</section>
+
+
+{% endblock %}

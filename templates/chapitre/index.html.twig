@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chapitres{% endblock %}
+
+{% block body %}
+    <h1 class="title">Chapitres du livre : {{livre.titre}}</h1>
+    <a class="btnb" href="{{ path('app_chapitre_new') }}">+ Chapitre</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Numero_chapitre</th>
+                <th>Livre</th>
+                <th>Titre</th>
+                <th>Contenu</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for chapitre in chapitres %}
+            <tr>
+                <td class="table-cell">{{ chapitre.numeroChapitre }}</td>
+                <td class="table-cell">{{ chapitre.livre }}</td>
+                <td class="table-cell">{{ chapitre.titre }}</td>
+                <td class="table-cell">{{ chapitre.contenu|split(' ')|slice(0, 15)|join(' ') }}</td>
+                <td class="table-cell">
+                    <div class="align-items">
+                    <a href="{{ path('app_chapitre_show', {'id': chapitre.id}) }}" class="button-link">Voir</a>
+                    <a href="{{ path('app_chapitre_edit', {'id': chapitre.id}) }}" class="button-link">Modifier</a>
+                    <a href="{{ path('app_chapitre_delete', {'id': chapitre.id}) }}" class="button-link-delete"
+                        onclick="event.preventDefault(); document.getElementById('delete-form-{{ chapitre.id }}').submit();">Supprimer</a>
+                    <form id="delete-form-{{ chapitre.id }}" action="{{ path('app_chapitre_delete', {'id': chapitre.id}) }}" method="POST" style="display: none;">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ chapitre.id) }}">
+                    </form>
+                </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

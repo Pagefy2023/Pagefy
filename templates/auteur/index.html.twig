@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Auteurs{% endblock %}
+
+{% block body %}
+    <h1 class="title">Auteurs</h1>
+
+        <a class="btnb" href="{{ path('app_auteur_new') }}">+ Auteur</a>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Biographie</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for auteur in auteurs %}
+            <tr>
+                <td class="table-cell">{{ auteur.nom }}</td>
+                <td class="table-cell">{{ auteur.biographie|split(' ')|slice(0, 15)|join(' ')  }}</td>
+                <td class="table-cell">
+                <div class="align-items">
+                    <a href="{{ path('app_auteur_show', {'id': auteur.id}) }}" class="button-link">Voir</a>
+                    <a href="{{ path('app_auteur_edit', {'id': auteur.id}) }}" class="button-link">Modifier</a>
+                    <a href="{{ path('app_auteur_delete', {'id': auteur.id}) }}" class="button-link-delete"
+                        onclick="event.preventDefault(); document.getElementById('delete-form-{{ auteur.id }}').submit();">Supprimer</a>
+                    <form id="delete-form-{{ auteur.id }}" action="{{ path('app_auteur_delete', {'id': auteur.id}) }}" method="POST" style="display: none;">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ auteur.id) }}">
+                    </form>
+                </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4" class="table-cell">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

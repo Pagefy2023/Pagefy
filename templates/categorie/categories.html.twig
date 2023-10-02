@@ -1,0 +1,40 @@
+
+ {% extends 'base.html.twig' %}
+
+{% block title %}Categorie{% endblock %}
+
+{% block body %}
+
+
+<h1 class="title">Catégories</h1>
+    <div id="category-btns">
+        {% for categorie in categories %}
+            <a href="{{ path('app_categorie_search', {'categoryId': categorie.id}) }}" class="category-btn">
+                {{ categorie.nom }}
+            </a>
+        {% endfor %}
+    </div>
+
+
+        {% if selectedCategoryId is not null %}
+            <h2 class="title">Livres de la catégorie : {{ categories[selectedCategoryId - 1].nom }}</h2>
+
+    <section id="book1" class="section-p1">
+        <div class="book-container">
+                {% for livre in livres %}
+            <a class="style-livre-btn" href="{{ path('app_livre_show', {id: livre.id}) }}">
+            <div class="book">
+                <img src="{{ asset('assets/img/' ~ livre.couverture) }}" alt="image du livre">
+                <div class="des">
+                    <span>{{livre.categorie}}</span>
+                    <h4>{{ livre.titre }}</h4>
+                    <h5>{{livre.auteur}}</h5>
+                </div>
+            </div>
+            </a>
+                {% endfor %}
+        </div>
+    </section>
+        {% endif %}
+
+{% endblock %}

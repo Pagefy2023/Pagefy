@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        {# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.2/zephyr/bootstrap.rtl.min.css" integrity="sha512-j2ftPOMuOQq75PoRUuz/vVrUh0t522QQjVIz4aDwJB/HWpPmS9eYCzus4YwjtyzFAsU+0n3H0LhRj9W6N1DMjg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> #}
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap">
+        <script src="{{ asset('assets/js/pagefy.js') }}" defer></script>
+
+        {% block stylesheets %}
+        {% endblock %}
+
+        {% block javascripts %}
+        {% endblock %}
+    </head>
+    <body>
+
+    <section id="header">
+        <a href="{{ path('app_pagefy') }}" ><img src="{{ asset('assets/img/navbar_logo_pagefy.svg') }}"  width="120px" alt="Logo Pagefy"></a>
+
+        <div>
+            <ul id="navbar">
+            
+                <li><a href="{{path('app_pagefy')}}" class="active" >Home</a></li>
+                <li><a href="{{path('livre_search')}}"><i class="bi bi-search"></i> Recherche </a></li>
+                <li><a href="{{ path('app_categorie_search') }}">Categories</a></li>
+                <li><a href="#">Abonnement</a></li>
+                {% if app.user %}
+                {% if is_granted('ROLE_ADMIN')  %}
+                    <li><a href="{{path('app_administrator')}}">Admin</a></li>
+                {% endif %}
+                    <li><a href="{{path('app_logout')}}">Déconnexion</a></li>
+                {% else %}
+                    <li><a href="{{path('app_login')}}">Connexion</a></li>
+                {% endif %}
+                <a href="#" id="close"><i class="bi bi-x-lg"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="#"><img  src="{{asset('assets/img/library.png')}}" width="24px" alt=""></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+
+        {% block body %}{% endblock %}
+
+        <footer class="section-p1">
+            <div class="col">
+                <a href="{{ path('app_pagefy') }}" ><img class="logo" src="{{ asset('assets/img/navbar_logo_pagefy.svg') }}"  width="120px" alt="Logo Pagefy"></a>
+                <h4>Contact</h4>
+                <p><strong>Adresse: </strong> 19 avenue de la Victoire.</p>
+                <p><strong>Telephone: </strong> 0789654212</p>
+                <p><strong>Telephone: </strong> 10:00 - 18:00, Lundi - Vendredi</p>
+            </div>
+
+            <div class="col">
+                <h4>A propos</h4>
+                <a href="{{path('aPropos_pagefy')}}">A propos de nous</a>
+                <a href="{{path('privacyPolicy_pagefy')}}">Politique de confidentialité</a>
+                <a href="{{path('termsConditions_pagefy')}}">Termes & Conditions</a>
+                <a href="{{path('contact_pagefy')}}">Contactez nous</a>
+            </div>
+
+            <div class="col">
+                <h4>Mon compte</h4>
+                <a href="#">Mes Abonnements</a>
+                <a href="#">Ma Bibliotheque de Livres</a>
+                <a href="#">Aide</a>
+            </div>
+
+            <div class="col install">
+
+                <h4>Payement Sécurise</h4>
+                <img src="{{ asset('assets/img/visa.png') }}"  width="98px" alt="Logo Visa">
+                <img class="logo-mastercard" src="{{ asset('assets/img/mastercard.webp') }}"  width="90px" alt="Logo Mastercard">
+                <img src="{{ asset('assets/img/maestro.png') }}"  width="116px" alt="Logo Maestro">
+            </div>
+
+            <div class="copyright">
+                <p>© 2023 Pagefy. Tous droits réservés.</p>
+            </div>
+        </footer>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    
+    </body>
+</html>

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Conditions Générales de Vente - Pagefy{% endblock %}
+
+{% block body %}
+
+        <h1 class="title">Conditions Générales de Vente</h1>
+
+
+    <section class="content-polit">
+        <h2>Informations de l'entreprise</h2>
+        <p>Pagefy est exploité par XXXXX, dont le siège social est situé à 2. XXXXX, 3. XX XX XX XX XX. Vous pouvez nous contacter au [Numéro de téléphone] ou par mail à [Adresse mail].</p>
+
+        <h2>Produits ou Services</h2>
+        <p>Nous proposons des services d'abonnement pour la lecture de livres en ligne. Nos produits incluent un abonnement mensuel ou annuel.</p>
+
+        <h2>Prix</h2>
+        <p>Les prix de nos abonnements sont déterminés par [Politique de prix spécifiée].</p>
+
+        <h2>Conditions de Paiement</h2>
+        <p>Le paiement de nos abonnements peut être effectué par carte de crédit.</p>
+
+        <h2>Remboursement</h2>
+        <p>Nous n'offrons pas de remboursement pour nos abonnements.</p>
+
+        <h2>Politique de Confidentialité</h2>
+        <p>Veuillez consulter notre <a href="{{ path('privacyPolicy_pagefy') }}">Politique de Confidentialité</a> pour plus d'informations sur la gestion de vos données personnelles.</p>
+    </section>
+{% endblock %}

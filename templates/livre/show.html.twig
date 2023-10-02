@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Livre
+{% endblock %}
+
+{% block body %}
+
+	<section id="header-bookinfo">
+        <div class="book-img">
+            <img src="{{ asset('assets/img/' ~ livre.couverture ) }}" width="300px" alt=" {{livre.titre}} ">
+        </div>
+        <div class="book-info">
+            <div class="book-title-autor">
+                <h1 class="book-title">{{livre.titre}}</h1>
+                <span class="book-autor"> {{livre.auteur}} </span>
+            </div>
+            <div class="chapters">
+                <small>Chapitres</small>
+                <strong>
+                    <i class="fas fa-book"></i>
+                    {{livre.chapitres|length}}
+                </strong>
+            </div>
+            <div class="category">
+               <strong>Categories :</strong>  
+               {% for categorie in categories %}
+               <a href="{{ path('app_categorie_search', {'categoryId': categorie.id}) }}" class="category-btn-info">
+                {% endfor %} 
+                {{ livre.categorie }}
+                </a>  
+            </div>
+            {% for chapitre in chapitres %}
+            
+            {% endfor %}
+            <div class="book-links">
+                {% if chapitres is not empty %}
+                <a class="link-read" href="{{ path('app_chapitre_show', { 'id': chapitres[0].id }) }}">Lire</a>
+                {% endif %}
+
+                {% if app.user %}
+                {% if is_granted('ROLE_ADMIN') %}
+                
+                    <a class="link-edit" href="{{ path('app_livre_edit', {'id': livre.id}) }}">Modifier</a>
+                    <a class="link-edit" href="{{ path('app_chapitre_new', {'id': livre.id}) }}">Nouveau Chapitre</a>
+                {% endif %}
+                {% endif %}
+                
+            </div>
+        </div>
+    </section>
+
+
+   <section id="book-tab-links">
+    <a href="" class="link marg-r" id="resume-link"><span>Resumé</span></a>
+    <i class="fa-solid fa-grip-lines-vertical fa-2xl line"></i>
+    <a href="" class="link marg-l" id="chapitres-link"><span>Chapitres</span></a>
+</section>
+
+
+
+    <section id="about">
+        <div class="content">
+            <p>{{livre.resume}}</p>
+        </div>
+    </section>
+
+    
+   <section id="contentChapter">
+    <div class="content">
+        <ul>
+            {% for chapitre in chapitres %}
+                <li>
+                    <a href="{{ path('app_chapitre_show', {'id': chapitre.id}) }}">
+                        <span class="chapter-number">Chapitre : {{ chapitre.numeroChapitre }}</span>
+                        <span class="chapter-title">" {{ chapitre.titre }} "</span>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="edit-chap">
+        {% if app.user %}
+        {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('app_livre_chapitres', { 'id': livre.id }) }}" class="btnb">Gerer les chapitres du livre</a>
+        {% endif %}
+        {% endif %}
+    </div>
+</section>
+
+
+
+
+	
+
+
+
+{% endblock %}

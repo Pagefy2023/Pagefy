@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier {% endblock %}
+
+{% block body %}
+    <h1 class="title">Modifier</h1>
+
+    <a class="btnb" href="{{ path('app_chapitre_index') }}">Revenir à la liste</a>
+
+<div class="div-form-style">
+    {{ include('chapitre/_form.html.twig', {'button_label': 'Modifier'}) }}
+</div>
+
+
+    
+{% endblock %}

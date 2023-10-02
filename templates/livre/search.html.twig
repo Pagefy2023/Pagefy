@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<h1 class="title">Recherche</h1>
+
+
+	<form method="get" id="container">
+		{{ form_start(form) }}
+		{{ form_row(form.titre) }}
+		{# <div class="search-position"> #}
+		<button type="submit" class="btnb">
+			<i class="bi bi-search back-color"></i>
+		</button>
+		{# </div> #}
+		{{ form_end(form) }}
+	</form>
+
+
+	{% if pagination is not empty  %}
+		{% for livre in pagination %}
+        <a href="{{ path('app_livre_show', {'id': livre.id}) }}">
+			<section id="book1" class="section-p1">
+				<div class="book-container">
+					<div class="book">
+						<img src="{{ asset('assets/img/' ~ livre.couverture) }}" alt="image du livre">
+						<div class="des">
+							<span>{{livre.categorie}}</span>
+							<h4>{{ livre.titre }}</h4>
+							<h5>{{livre.auteur}}</h5>
+						</div>
+					</div>
+				</div>
+			</section>
+        </a>    
+		{% endfor %}
+        {{ knp_pagination_render(pagination) }}
+	{% else %}
+		<div class="position">
+			{# <p>Aucun livre trouvé.</p> #}
+		</div>
+	{% endif %}
+
+{% endblock %}

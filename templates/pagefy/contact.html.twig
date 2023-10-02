@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pagefy Contacter{% endblock %}
+
+{% block body %}
+<h1 class="title">Contactez-nous</h1>
+
+<div class="div-form-style">
+    {{ form_start(form) }}
+    {{ form_row(form.email, {'label': 'Votre adresse e-mail'}) }}
+    {{ form_row(form.prenom, {'label': 'Prénom'}) }}
+    {{ form_row(form.nom, {'label': 'Nom'}) }}
+    {{ form_row(form.message) }}
+    <div class="position">
+    {{ form_row(form.submit) }}
+    </div>
+    {{ form_end(form) }}
+</div>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Chapitre{% endblock %}
+
+{% block body %}
+
+<section id="titleChapter">
+    <div class="container">
+        <a href="{{ path('app_livre_show', {'id': livre.id}) }}">
+            <h1 class="title-chapter">{{ livre.titre }}</h1>
+        </a>
+        {% if app.user %}
+        {% if is_granted('ROLE_ADMIN') %}
+        <a class="link-edit" href="{{ path('app_chapitre_edit', {'id': chapitre.id}) }}">Modifier</a>
+        {% endif %}
+        {% endif %}
+        <h2 class="sm-title">Chapitre {{ chapitre.numeroChapitre }} ... {{ chapitre.titre }}</h2>
+    </div>
+    <div class="Bigborder">
+        <div class="border">
+        </div>
+    </div>
+</section>
+
+<section id="contentChaptershow">
+    <div class="content-chap">
+        {% for phrase in chapitre.contenu|split('. ') %}
+            {{ phrase }}.
+            <p></p>
+        {% endfor %}
+    </div>
+</section>
+
+<div class="navigation-center">
+
+{% if index > 0 %}
+    <a href="{{ path('app_chapitre_show', { 'id': chapitres[index - 1].id }) }}" class="btnb"><i class="bi bi-arrow-left back-color"></i> Précédent</a>
+{% endif %}
+
+<a class="btnb" href="{{ path('app_livre_show', {'id': livre.id}) }}">Table des Matieres</a>
+
+{% if index < chapitres|length - 1 %}
+    <a href="{{ path('app_chapitre_show', { 'id': chapitres[index + 1].id }) }}" class="btnb">Suivant<i class="bi bi-arrow-right back-color"></i></a>
+{% endif %}
+
+</div>
+
+
+
+
+{% endblock %}

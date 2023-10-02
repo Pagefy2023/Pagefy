@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page Administrative!{% endblock %}
+
+{% block body %}
+
+<h1 class="title">Page Administrative</h1>
+
+<section id="admin">
+    <div class="admin-link">
+        <a  class="btnb" href="{{ path('app_livre_index') }}">Livres</a>
+        <a  class="btnb" href="{{ path('app_categorie_index') }}">Categories</a>
+    </div>
+    <div class="admin-link">
+        <a  class="btnb" href="{{ path('app_auteur_index') }}">Auteurs</a>
+        <a  class="btnb" href="{{ path('app_auteur_index') }}">Abonnement</a>
+    </div>
+</section>
+
+{% endblock %}

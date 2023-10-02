@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categorie{% endblock %}
+
+{% block body %}
+    <h1 class="title">Categorie</h1>
+
+<div class="con-btn">
+    <a class="btn-show" href="{{ path('app_categorie_index') }}">Revenir a la liste</a>
+    <a class="btn-show" href="{{ path('app_categorie_edit', {'id': categorie.id}) }}">Editer</a>
+</div>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Nom</th>
+                <td>{{ categorie.nom }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+{% endblock %}
