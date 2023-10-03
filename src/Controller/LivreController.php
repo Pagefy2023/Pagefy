@@ -11,7 +11,6 @@ use App\Form\LivreSearchType;
 use App\Repository\LivreRepository;
 use App\Repository\CategorieRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -45,7 +44,7 @@ class LivreController extends AbstractController
     }
 
     #[Route('/search', name: 'livre_search', methods: ['GET'])]
-    public function search(LivreRepository $repo, #[Autowire('%couverture_directory%')] string $couvertureDir, Request $request , PaginatorInterface $paginator): Response
+    public function search(LivreRepository $repo, #[Autowire('%couverture_directory%')] string $couvertureDir, Request $request): Response
 {
     $titre = $request->query->get('titre'); 
 
@@ -55,24 +54,17 @@ class LivreController extends AbstractController
     $livres = [];
 
     if ($form->isSubmitted() && $form->isValid()) {
-        // dump($titre);
+
         $titre = $form->get('titre')->getData();
 
         $livres = $repo->searchByTitre($titre);
     }
 
-    $pagination = $paginator->paginate(
-        $livres,
-        $request->query->get('page', 1),
-        15
-    );
-
-    $pagination->setParam('titre', $titre);
 
     return $this->render('livre/search.html.twig', [
         'form' => $form->createView(),
         'livres' => $livres,
-        'pagination' => $pagination
+
     ]);
 }
 

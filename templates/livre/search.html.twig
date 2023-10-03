@@ -7,17 +7,14 @@
 	<form method="get" id="container">
 		{{ form_start(form) }}
 		{{ form_row(form.titre) }}
-		{# <div class="search-position"> #}
 		<button type="submit" class="btnb">
 			<i class="bi bi-search back-color"></i>
 		</button>
-		{# </div> #}
 		{{ form_end(form) }}
 	</form>
 
 
-	{% if pagination is not empty  %}
-		{% for livre in pagination %}
+		{% for livre in livres %}
         <a href="{{ path('app_livre_show', {'id': livre.id}) }}">
 			<section id="book1" class="section-p1">
 				<div class="book-container">
@@ -33,11 +30,5 @@
 			</section>
         </a>    
 		{% endfor %}
-        {{ knp_pagination_render(pagination) }}
-	{% else %}
-		<div class="position">
-			{# <p>Aucun livre trouvé.</p> #}
-		</div>
-	{% endif %}
 
 {% endblock %}
