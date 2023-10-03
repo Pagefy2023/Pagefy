@@ -2,11 +2,12 @@
 
 namespace App\Form;
 
+use App\Entity\Chapitre;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class CategorySearchFormType extends AbstractType
 {
@@ -15,7 +16,7 @@ class CategorySearchFormType extends AbstractType
         $builder
             ->add('category', ChoiceType::class, [
                 'choices' => [
-                    // Ajout du champ "categorie" au formulaire
+                    
                 ],
                 'label' => 'Catégorie',
                 'required' => false,
@@ -23,12 +24,14 @@ class CategorySearchFormType extends AbstractType
             ->add('title', TextType::class, [
                 'label' => 'Titre',
                 'required' => false,
-                // Ajout du champ "title" au formulaire
+                
             ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults([]);
+        $resolver->setDefaults([
+            'data_class' => Chapitre::class,
+        ]);
     }
 }
