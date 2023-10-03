@@ -15,7 +15,7 @@ class CategorySearchFormType extends AbstractType
         $builder
             ->add('category', ChoiceType::class, [
                 'choices' => [
-                    // Options de choix pour les catégories
+                    // Ajout du champ "categorie" au formulaire
                 ],
                 'label' => 'Catégorie',
                 'required' => false,
@@ -23,6 +23,7 @@ class CategorySearchFormType extends AbstractType
             ->add('title', TextType::class, [
                 'label' => 'Titre',
                 'required' => false,
+                // Ajout du champ "title" au formulaire
             ]);
     }
 

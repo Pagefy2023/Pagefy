@@ -12,6 +12,7 @@ class LivreSearchType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+        //formulaire de recherche de livres
             ->add('titre', TextType::class, [
                 // 'required' => false,
                 'label' => false,

@@ -22,6 +22,7 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+        //formulaire de validateion d'email
         ->add('email', EmailType::class, [
             'constraints' => [
                 new NotBlank([
@@ -45,6 +46,7 @@ class RegistrationFormType extends AbstractType
                 'class' => 'form-style-email'
             ]
         ])
+        //formulaire de validateion de mot de passe
             
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
@@ -71,39 +73,7 @@ class RegistrationFormType extends AbstractType
                 ],
             ])
             
-
-            ->add('plainPassword', RepeatedType::class, [
-                'type' => PasswordType::class,
-                'invalid_message' => 'Les champs de mot de passe doivent correspondre.',
-                'first_options' => [
-                    'label' => 'Mot de passe',
-                    'attr' => [
-                        'class' => 'form-style-pass',
-                        'autocomplete' => 'new-password',
-                    ],
-                ],
-                'second_options' => [
-                    'label' => 'Confirmer le mot de passe',
-                    'attr' => [
-                        'class' => 'form-style-pass',
-                        'autocomplete' => 'new-password',
-                    ],
-                ],
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'Veuillez entrer un mot de passe.',
-                    ]),
-                    new Length([
-                        'min' => 9,
-                        'minMessage' => 'Votre mot de passe doit contenir au moins {{ limit }} caractères.',
-                        'max' => 4096,
-                    ]),
-                    new Regex([
-                        'pattern' => '/^(?=.*[A-Z])(?=.*[0-9])(?=.*\W)/',
-                        'message' => 'Votre mot de passe doit contenir au moins une lettre majuscule, un chiffre et un caractère spécial.',
-                    ]),
-                ],
-            ]);
+            ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

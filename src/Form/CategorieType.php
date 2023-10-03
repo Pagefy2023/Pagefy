@@ -15,8 +15,9 @@ class CategorieType extends AbstractType
         $builder
         ->add('nom', null, [
             'attr' => ['class' => 'form-style-new']
+                    // Ajout du champ "nom" au formulaire
         ])
-            // ->add('livres')
+           
         ;
     }
 

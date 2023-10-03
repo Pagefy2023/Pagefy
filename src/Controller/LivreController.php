@@ -146,7 +146,7 @@ class LivreController extends AbstractController
     }
 
 
-    #[Route('/admin/{id}/delete', name: 'app_livre_delete', methods: ['POST'])]
+    #[Route('/{id}/delete', name: 'app_livre_delete', methods: ['POST'])]
     public function delete(Request $request, Livre $livre, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$livre->getId(), $request->request->get('_token'))) {

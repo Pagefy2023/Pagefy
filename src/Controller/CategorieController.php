@@ -93,7 +93,7 @@ public function search( CategorieRepository $repo, LivreRepository $repoLivre, $
         ]);
     }
 
-    #[Route('/admin/{id}', name: 'app_categorie_delete', methods: ['POST'])]
+    #[Route('/{id}', name: 'app_categorie_delete', methods: ['POST'])]
     public function delete(Request $request, Categorie $categorie, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$categorie->getId(), $request->request->get('_token'))) {

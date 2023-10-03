@@ -1,1264 +1,1190 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* Importe la police "Spartan" depuis Google Fonts. */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Spartan', sans-serif;
-    background-color: #E3E6F3;
+    margin: 0; /* Réinitialise les marges */
+    padding: 0; /* Réinitialise les paddings */
+    box-sizing: border-box; /* Définit la boîte de modélisation en bordure */
+    font-family: 'Spartan', sans-serif; /* Applique la police "Spartan" à l'ensemble de la page */
+    background-color: #E3E6F3; /* Définit l'arrière-plan */
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none; /* Supprime la décoration de soulignement pour les liens */
 }
 
-
 h1 {
-    font-size: 50px;
-    line-height: 64px;
-    color: #222;
+    font-size: 50px; /* Définit la taille de police */
+    line-height: 64px; /* Définit la hauteur de ligne */
+    color: #222; /* Définit la couleur */
 }
 
 h2 {
-    font-size: 46px;
-    line-height: 54px;
-    color: #222;
+    font-size: 46px; /* Définit la taille de police */
+    line-height: 54px; /* Définit la hauteur de ligne */
+    color: #222; /* Définit la couleur */
 }
 
 h4 {
-    font-size: 20px;
-    color: #222;
+    font-size: 20px; /* Définit la taille de police */
+    color: #222; /* Définit la couleur */
 }
 
 h6 {
-    font-weight: 700;
-    font-size: 12px;
+    font-weight: 700; /* Définit le poids de la police */
+    font-size: 12px; /* Définit la taille de police */
 }
 
 p {
-    font-size: 16px;
-    color: #465b52;
-    margin: 15px 0 20px 0;
+    font-size: 16px; /* Définit la taille de police */
+    color: #465b52; /* Définit la couleur */
+    margin: 15px 0 20px 0; /* Définit les marges */
 }
 
 .section-p1 {
-    padding: 40px 80px;
+    padding: 40px 80px; /* Définit les marges intérieures */
 }
 
-.centered{
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.centered {
+    display: grid; /* Utilisé pour centrer le contenu */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    text-align: center; /* Centre le texte */
 }
 
 .section-m1 {
-    margin: 40px 0;
+    margin: 40px 0; /* Définit les marges extérieures */
 }
 
-button.normal{
-    font-size: 14px;
-    font-weight: 600;
-    padding: 15px 30px;
-    color: black;
-    background-color: white;
-    border-radius: 4px;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    transition: 0.2s;
+button.normal {
+    font-size: 14px; /* Définit la taille de police */
+    font-weight: 600; /* Définit le poids de la police */
+    padding: 15px 30px; /* Définit les marges intérieures */
+    color: black; /* Définit la couleur du texte */
+    background-color: white; /* Définit la couleur de l'arrière-plan */
+    border-radius: 4px; /* Définit le rayon de bordure */
+    cursor: pointer; /* Curseur pointeur au survol */
+    border: none; /* Supprime la bordure */
+    outline: none; /* Supprime la bordure de focus */
+    transition: 0.2s; /* Ajoute une transition */
 }
 
-button.white{
-    font-size: 13px;
-    font-weight: 600;
-    padding: 11px 18px;
-    color: #fff;
-    background-color: transparent;
-    cursor: pointer;
-    border: 1px solid #fff;
-    outline: none;
-    transition: 0.2s;
+button.white {
+    font-size: 13px; /* Définit la taille de police */
+    font-weight: 600; /* Définit le poids de la police */
+    padding: 11px 18px; /* Définit les marges intérieures */
+    color: #fff; /* Définit la couleur du texte */
+    background-color: transparent; /* Définit la couleur de l'arrière-plan transparente */
+    cursor: pointer; /* Curseur pointeur au survol */
+    border: 1px solid #fff; /* Définit une bordure solide blanche */
+    outline: none; /* Supprime la bordure de focus */
+    transition: 0.2s; /* Ajoute une transition */
 }
 
 body {
-    width: 100%;
+    width: 100%; /* Définit la largeur du corps de la page */
 }
+
 
 
 /* Header Start */
 
 #header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 80px;
-    background-color: #E3E6F3;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
-    z-index: 999;
-    position: sticky;
-    top: 0;
-    left: 0;
-
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    align-items: center; /* Centre verticalement les éléments enfants */
+    justify-content: space-between; /* Répartit l'espace disponible entre les éléments enfants */
+    padding: 20px 80px; /* Définit les marges intérieures de l'en-tête */
+    background-color: #E3E6F3; /* Définit la couleur de fond de l'en-tête */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.07); /* Ajoute une ombre à l'en-tête */
+    z-index: 999; /* Définit la position z pour empiler au-dessus d'autres éléments */
+    position: sticky; /* Fixe l'en-tête en haut de la page */
+    top: 0; /* Position en haut de la page */
+    left: 0; /* Position à gauche de la page */
 }
 
 #navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    align-items: center; /* Centre verticalement les éléments enfants */
+    justify-content: center; /* Centre horizontalement les éléments enfants */
 }
 
-#navbar li{
-    list-style: none;
-    padding: 0 20px;
-    position: relative;
+#navbar li {
+    list-style: none; /* Supprime les puces de la liste pour les éléments de la barre de navigation */
+    padding: 0 20px; /* Définit les marges intérieures horizontales des éléments de la barre de navigation */
+    position: relative; /* Définit la position relative pour les éléments de la barre de navigation */
 }
 
-#navbar li a{
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    color: #1a1a1a;
-    transition: 0.3s ease;
+#navbar li a {
+    text-decoration: none; /* Supprime la décoration de lien par défaut */
+    font-size: 16px; /* Définit la taille de la police */
+    font-weight: 600; /* Définit le poids de la police */
+    color: #1a1a1a; /* Définit la couleur du texte des liens de la barre de navigation */
+    transition: 0.3s ease; /* Ajoute une transition de 0.3 seconde en douceur pour les liens */
 }
 
-#navbar li a:hover, 
-#navbar li a:active  {
-    color: #108880;
+#navbar li a:hover,
+#navbar li a:active {
+    color: #108880; /* Change la couleur du texte au survol et au clic des liens */
 }
 
 #navbar li a:active::after,
 #navbar li a:hover::after {
-    content: "";
-    width: 30%;
-    height: 2px;
-    background-color: #108880;
+    content: ""; /* Ajoute un contenu après les liens */
+    width: 30%; /* Définit la largeur de la ligne après les liens */
+    height: 2px; /* Définit la hauteur de la ligne */
+    background-color: #108880; /* Définit la couleur de la ligne */
     /* position: absolute; */
-    bottom: -4px;
-    left: 20px;
+    bottom: -4px; /* Positionne la ligne en bas des liens */
+    left: 20px; /* Définit la distance depuis la gauche des liens */
 }
 
 #mobile {
-    display: none;
-    align-items: center;
+    display: none; /* Masque initialement les éléments avec l'ID "mobile" */
+    align-items: center; /* Centre verticalement les éléments enfants */
 }
 
 #close {
-    display: none;
+    display: none; /* Masque initialement les éléments avec l'ID "close" */
 }
 
 /* Home Page */
 
 #hero {
-    background-color: #E4E6F3;
-    height: 85vh;
-    width: 100%;
-    background-size: cover;
-    background-position: top 25% right 0;
-    padding: 0 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    
+    background-color: #E4E6F3; /* Définit la couleur de fond du héros */
+    height: 85vh; /* Définit la hauteur à 85% de la hauteur de la vue */
+    width: 100%; /* Définit la largeur à 100% */
+    background-size: cover; /* Redimensionne l'image de fond pour couvrir toute la zone */
+    background-position: top 25% right 0; /* Positionne l'image de fond */
+    padding: 0 80px; /* Définit les marges intérieures horizontales du héros */
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    flex-direction: column; /* Aligne les éléments enfants verticalement */
+    align-items: flex-start; /* Aligne les éléments enfants à gauche */
+    justify-content: center; /* Centre verticalement les éléments enfants */
 }
 
-#hero h4{
-    padding-bottom: 15px;
+#hero h4 {
+    padding-bottom: 15px; /* Définit l'espacement en bas du titre h4 */
 }
 
 #hero h1 {
-    color: #088178;
+    color: #088178; /* Définit la couleur du texte du titre h1 */
 }
 
 #hero button {
-    background-image: url("../img/button.png");
-    background-color: transparent;
-    color: #088178;
-    border: 0;
-    padding: 14px 80px 14px 50px;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 14px;
+    background-image: url("../img/button.png"); /* Définit une image de fond pour le bouton */
+    background-color: transparent; /* Définit la couleur de fond du bouton comme transparente */
+    color: #088178; /* Définit la couleur du texte du bouton */
+    border: 0; /* Supprime la bordure du bouton */
+    padding: 14px 80px 14px 50px; /* Définit les marges intérieures du bouton */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image de fond */
+    cursor: pointer; /* Définit le curseur comme une main au survol */
+    font-weight: 700; /* Définit le poids de la police du bouton */
+    font-size: 14px; /* Définit la taille de la police du bouton */
 }
 
 #title-genre {
-    height: 85vh;
-    width: 100%;
-    margin-bottom: -650px;
-    display: flex;
-    justify-content: center;
+    height: 85vh; /* Définit la hauteur à 85% de la hauteur de la vue */
+    width: 100%; /* Définit la largeur à 100% */
+    margin-bottom: -650px; /* Définit une marge négative en bas pour créer un chevauchement */
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    justify-content: center; /* Centre horizontalement les éléments enfants */
 }
 
 #feature {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    align-items: center; /* Centre verticalement les éléments enfants */
+    justify-content: space-between; /* Répartit l'espace disponible entre les éléments enfants */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne lorsque l'espace est insuffisant */
 }
 
-#feature .fe-box{
-    width: 180px;
-    text-align: center;
-    padding: 25px 15px;
-    box-shadow: 10px 20px 34px rgb(0, 0, 0, 0.16);
-    border: 1px solid #cce7D0;
-    border-radius: 4px;
-    margin: 15px 0;
-    transition: 0.4s ease;
-
+#feature .fe-box {
+    width: 180px; /* Définit la largeur des éléments de la section de fonctionnalités */
+    text-align: center; /* Centre le texte horizontalement */
+    padding: 25px 15px; /* Définit les marges intérieures */
+    box-shadow: 10px 20px 34px rgb(0, 0, 0, 0.16); /* Ajoute une ombre aux éléments */
+    border: 1px solid #cce7D0; /* Définit une bordure solide */
+    border-radius: 4px; /* Arrondit les coins */
+    margin: 15px 0; /* Définit les marges extérieures supérieures et inférieures */
+    transition: 0.4s ease; /* Ajoute une transition de 0.4 seconde en douceur */
 }
 
 #feature .fe-box:hover {
-    box-shadow: 10px 10px 54px rgb(0, 0, 0, 0.2);
-    cursor: pointer;
+    box-shadow: 10px 10px 54px rgb(0, 0, 0, 0.2); /* Change l'ombre au survol */
+    cursor: pointer; /* Définit le curseur comme une main au survol */
 }
 
 #feature .fe-box h6 {
-    display: inline-block;
-    padding: 9px 8px 6px 8px;
-    line-height: 1;
-    border-radius: 4px;
-    color:#088178;
-    background-color: #b6c9aa;
+    display: inline-block; /* Affiche le texte comme un élément en ligne */
+    padding: 9px 8px 6px 8px; /* Définit les marges intérieures du titre h6 */
+    line-height: 1; /* Définit la hauteur de ligne */
+    border-radius: 4px; /* Arrondit les coins */
+    color: #088178; /* Définit la couleur du texte du titre h6 */
+    background-color: #b6c9aa; /* Définit la couleur de fond du titre h6 */
 }
 
 #feature .fe-box:nth-child(2) h6 {
-    background-color: #cdebbc;
+    background-color: #cdebbc; /* Définit une couleur de fond différente pour le deuxième élément */
 }
 
 #feature .fe-box:nth-child(3) h6 {
-    background-color: #d1e8f2;
+    background-color: #d1e8f2; /* Définit une couleur de fond différente pour le troisième élément */
 }
 
 #feature .fe-box:nth-child(4) h6 {
-    background-color: #cdd4f8;
+    background-color: #cdd4f8; /* Définit une couleur de fond différente pour le quatrième élément */
 }
 
 #feature .fe-box:nth-child(5) h6 {
-    background-color: #f7ecf7;
-}   
-
-#feature .fe-box:nth-child(6) h6 {
-    background-color: #fff2e5;
+    background-color: #f7ecf7; /* Définit une couleur de fond différente pour le cinquième élément */
 }
 
+#feature .fe-box:nth-child(6) h6 {
+    background-color: #fff2e5; /* Définit une couleur de fond différente pour le sixième élément */
+}
+
+
 #book1 {
-    text-align: center;
+    text-align: center; /* Centre le contenu de l'élément book1 */
 }
 
 #book1 .book-container {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 20px;
-    flex-wrap: wrap;
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    justify-content: space-between; /* Répartit l'espace disponible entre les éléments enfants horizontalement */
+    padding-top: 20px; /* Définit l'espacement supérieur */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne lorsque l'espace est insuffisant */
 } 
 
 #book1 .book {
-    width: 23%;
-    min-width: 250px;
-    padding: 10px 12px;
-    border: 1px solid #c0bbbb;
-    border-radius: 20px;
-    cursor: pointer;
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
-    margin: 15px 0;
-    transition: 0.2s ease;
-    position: relative;
+    width: 23%; /* Définit la largeur des éléments book */
+    min-width: 250px; /* Définit la largeur minimale */
+    padding: 10px 12px; /* Définit les marges intérieures */
+    border: 1px solid #c0bbbb; /* Définit une bordure solide avec une couleur spécifique */
+    border-radius: 20px; /* Arrondit les coins */
+    cursor: pointer; /* Définit le curseur comme une main au survol */
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02); /* Ajoute une ombre avec des valeurs d'opacité */
+    margin: 15px 0; /* Définit les marges extérieures supérieures et inférieures */
+    transition: 0.2s ease; /* Ajoute une transition de 0.2 seconde en douceur */
+    position: relative; /* Définit la position relative pour positionner des éléments enfants */
 }
 
 #book1 .book:hover {
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.08);
-
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.08); /* Change l'ombre au survol */
 }
 
-#book1 .book img{
-    width: 70%;
-    border-radius: 20px;
-    margin-top: 8px;
+#book1 .book img {
+    width: 70%; /* Définit la largeur de l'image */
+    border-radius: 20px; /* Arrondit les coins de l'image */
+    margin-top: 8px; /* Définit l'espacement supérieur de l'image */
 }
 
-#book1 .book .des{
-    text-align: start;
-    padding: 10px 0;
+#book1 .book .des {
+    text-align: start; /* Aligne le texte à gauche (défaut) */
+    padding: 10px 0; /* Définit les marges intérieures supérieures et inférieures */
 }
 
-#book1 .book .des span{
-    color: #606063;
-    font-size: 12px;
+#book1 .book .des span {
+    color: #606063; /* Définit la couleur du texte du span */
+    font-size: 12px; /* Définit la taille de la police du span */
 }
 
-#book1 .book .des h5{
-    padding-top: 7px;
-    color: #1a1a1a;
-    font-size: 14px;
+#book1 .book .des h5 {
+    padding-top: 7px; /* Définit l'espacement supérieur du titre h5 */
+    color: #1a1a1a; /* Définit la couleur du texte du titre h5 */
+    font-size: 14px; /* Définit la taille de la police du titre h5 */
 }
 
-#book1 .book .des i{
-    font-size: 12px;
-    color: rgb(243, 181, 25);
+#book1 .book .des i {
+    font-size: 12px; /* Définit la taille de la police de l'élément i */
+    color: rgb(243, 181, 25); /* Définit la couleur du texte de l'élément i */
 }
 
-#book1 .book .des h4{
-    padding-top: 7px;
-    font-size: 20px;
-    font-weight: 700;
-    color:#088178;
+#book1 .book .des h4 {
+    padding-top: 7px; /* Définit l'espacement supérieur du titre h4 */
+    font-size: 20px; /* Définit la taille de la police du titre h4 */
+    font-weight: 700; /* Définit le poids de la police du titre h4 */
+    color: #088178; /* Définit la couleur du texte du titre h4 */
 }
 
 #book1 .book .add {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 8px;
-    background-color: #e8f6ea;
-    font-weight: 500;
-    color: #088178;
-    border-color: 1px solid #cce7d0;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
+    width: 40px; /* Définit la largeur */
+    height: 40px; /* Définit la hauteur */
+    line-height: 40px; /* Définit la hauteur de ligne égale à la hauteur */
+    border-radius: 8px; /* Arrondit les coins */
+    background-color: #e8f6ea; /* Définit la couleur de fond */
+    font-weight: 500; /* Définit le poids de la police */
+    color: #088178; /* Définit la couleur du texte */
+    border-color: 1px solid #cce7d0; /* Définit une bordure solide */
+    position: absolute; /* Définit la position absolue pour positionner l'élément */
+    bottom: 20px; /* Définit la distance depuis le bas */
+    right: 20px; /* Définit la distance depuis la droite */
 }
+
 
 #banner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-image: url("../img/background-image-banner.jpg");
-    width: 100%;
-    height: 40vh;
-    background-size: cover;
-    background-position: center;
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    flex-direction: column; /* Définit la direction de la disposition en colonne */
+    justify-content: center; /* Centre le contenu verticalement */
+    align-items: center; /* Centre le contenu horizontalement */
+    text-align: center; /* Centre le texte dans l'élément */
+    background-image: url("../img/background-image-banner.jpg"); /* Définit l'image de fond */
+    width: 100%; /* Définit la largeur à 100% de la largeur du conteneur parent */
+    height: 40vh; /* Définit la hauteur à 40% de la hauteur de la fenêtre */
+    background-size: cover; /* Ajuste la taille de l'image de fond pour couvrir tout l'élément */
+    background-position: center; /* Centre l'image de fond horizontalement et verticalement */
 }
 
-#banner h4{
-    background-color: transparent;
-    color: #fff;
-    font-size: 16px;
-
+#banner h4 {
+    background-color: transparent; /* Définit la couleur de fond comme transparente */
+    color: #fff; /* Définit la couleur du texte en blanc */
+    font-size: 16px; /* Définit la taille de la police */
 }
 
-#banner h2{
-    background-color: transparent;
-    color: #ffffff;
-    font-size: 30px;
-    padding: 10px 0;
+#banner h2 {
+    background-color: transparent; /* Définit la couleur de fond comme transparente */
+    color: #ffffff; /* Définit la couleur du texte en blanc */
+    font-size: 30px; /* Définit la taille de la police */
+    padding: 10px 0; /* Définit les marges supérieure et inférieure */
 }
 
-#banner h2 span{
-    background-color: transparent;
-    color: #ef3636;
+#banner h2 span {
+    background-color: transparent; /* Définit la couleur de fond comme transparente */
+    color: #ef3636; /* Définit la couleur du texte en rouge */
 }
 
 #banner button:hover {
-    background-color: #088178;
-    color: #fff;       
+    background-color: #088178; /* Change la couleur de fond au survol */
+    color: #fff; /* Change la couleur du texte au survol */
 }
 
 #sm-banner {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    justify-content: space-between; /* Répartit l'espace disponible entre les éléments enfants horizontalement */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne lorsque l'espace est insuffisant */
 }
 
 #sm-banner .banner-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    background-image: url("../img/back-banner.jpg");
-    min-width: 630px;
-    height: 50vh;
-    background-size: cover;
-    background-position: center;
-    padding: 30px;
-    border-radius: 2px;
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    flex-direction: column; /* Définit la direction de la disposition en colonne */
+    justify-content: center; /* Centre le contenu verticalement */
+    align-items: flex-start; /* Aligne le contenu à gauche horizontalement */
+    background-image: url("../img/back-banner.jpg"); /* Définit l'image de fond */
+    min-width: 630px; /* Définit la largeur minimale */
+    height: 50vh; /* Définit la hauteur à 50% de la hauteur de la fenêtre */
+    background-size: cover; /* Ajuste la taille de l'image de fond pour couvrir tout l'élément */
+    background-position: center; /* Centre l'image de fond horizontalement et verticalement */
+    padding: 30px; /* Définit les marges intérieures */
+    border-radius: 2px; /* Arrondit les coins */
 }
 
-
-
-#sm-banner h4{
-    color: #000000;
-    font-size: 20px;
-    font-weight: 300;
-    background-color: transparent;
+#sm-banner h4 {
+    color: #000000; /* Définit la couleur du texte en noir */
+    font-size: 20px; /* Définit la taille de la police */
+    font-weight: 300; /* Définit le poids de la police */
+    background-color: transparent; /* Définit la couleur de fond comme transparente */
 }
 
-#sm-banner h2{
-    color: #088178;
-    font-size: 28px;
-    font-weight: 800;
-    background-color: transparent;
+#sm-banner h2 {
+    color: #088178; /* Définit la couleur du texte en vert */
+    font-size: 28px; /* Définit la taille de la police */
+    font-weight: 800; /* Définit le poids de la police */
+    background-color: transparent; /* Définit la couleur de fond comme transparente */
 }
 
-#sm-banner span{
-    color: #000000;
-    font-size: 14px;
-    font-weight: 500;
-    padding-bottom: 15px;
-    background-color: transparent;
+#sm-banner span {
+    color: #000000; /* Définit la couleur du texte en noir */
+    font-size: 14px; /* Définit la taille de la police */
+    font-weight: 500; /* Définit le poids de la police */
+    padding-bottom: 15px; /* Définit l'espacement inférieur */
+    background-color: transparent; /* Définit la couleur de fond comme transparente */
 }
 
 #sm-banner .banner-box:hover a {
-    background-color: #088178;
-    border: 1px solid #088178;
+    background-color: #088178; /* Change la couleur de fond au survol */
+    border: 1px solid #088178; /* Change la bordure au survol */
 }
-
 footer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    box-shadow: 0 -5px 15px rgba(0,0,0,0.07);
-    margin-top: 15vh;
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne lorsque l'espace est insuffisant */
+    justify-content: space-between; /* Répartit l'espace disponible entre les éléments enfants horizontalement */
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.07); /* Ajoute une ombre sous le pied de page */
+    margin-top: 15vh; /* Définit une marge supérieure de 15vh (15% de la hauteur de la fenêtre) */
 }
 
-footer .col{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 20px;
+footer .col {
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    flex-direction: column; /* Définit la direction de la disposition en colonne */
+    align-items: flex-start; /* Aligne le contenu à gauche horizontalement */
+    margin-bottom: 20px; /* Ajoute une marge inférieure de 20px */
 }
 
 footer .logo {
-    margin-bottom: 30px;
+    margin-bottom: 30px; /* Ajoute une marge inférieure de 30px */
 }
 
-footer h4{
-    font-size: 14px;
-    padding-bottom: 20px;
+footer h4 {
+    font-size: 14px; /* Définit la taille de la police */
+    padding-bottom: 20px; /* Ajoute une marge inférieure de 20px */
 }
 
-footer p{
-    font-size: 13px;
-    margin: 0 0 8px 0;
+footer p {
+    font-size: 13px; /* Définit la taille de la police */
+    margin: 0 0 8px 0; /* Définit les marges individuelles */
 }
 
-footer a{
-    font-size: 13px;
-    text-decoration: none;
-    color: #222;
-    margin-bottom: 10px;
+footer a {
+    font-size: 13px; /* Définit la taille de la police */
+    text-decoration: none; /* Supprime la décoration des liens (soulignement par défaut) */
+    color: #222; /* Définit la couleur du texte en gris foncé */
+    margin-bottom: 10px; /* Ajoute une marge inférieure de 10px */
 }
 
-footer .copyright{
-    width: 100%;
-    text-align: center;
+footer .copyright {
+    width: 100%; /* Définit la largeur à 100% de la largeur du conteneur parent */
+    text-align: center; /* Centre le texte horizontalement */
 }
-
-
 
 .logo-mastercard {
-    margin-left: 10px;
+    margin-left: 10px; /* Ajoute une marge à gauche de 10px */
 }
 
 
 /* Categorie Pages */
 
-.title{
-    color: #088178;
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-    margin-bottom: 4vh;
-}
-.title-chapter{
-    color: #088178;
-    margin-left: 40vh;
-    margin-bottom: 1px;
-    font-size: 2.9vh;
-    font-weight: 600;
-    margin-bottom: -2.5vh;
+.title {
+    color: #088178; /* Couleur du texte en turquoise */
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    justify-content: center; /* Centre le contenu horizontalement */
+    margin-top: 40px; /* Ajoute une marge supérieure de 40px */
+    margin-bottom: 4vh; /* Ajoute une marge inférieure de 4vh (4% de la hauteur de la fenêtre) */
 }
 
-.sm-title{
-    color: #252525;
-    margin-left: 40vh;
-    font-size: 1.8vh;
-    margin-top: -2.8vh;
+.title-chapter {
+    color: #088178; /* Couleur du texte en turquoise */
+    margin-left: 40vh; /* Déplace le texte vers la gauche de 40vh (40% de la hauteur de la fenêtre) */
+    margin-bottom: 1px; /* Ajoute une marge inférieure de 1px */
+    font-size: 2.9vh; /* Définit la taille de la police en 2.9vh (2.9% de la hauteur de la fenêtre) */
+    font-weight: 600; /* Définit l'épaisseur de la police en gras */
+    margin-bottom: -2.5vh; /* Déplace le texte vers le haut de 2.5vh (2.5% de la hauteur de la fenêtre) */
 }
 
-#category-btns{
-    margin-top: 5vh;
-    display: flex;
-    justify-content: center;
+.sm-title {
+    color: #252525; /* Couleur du texte en gris foncé */
+    margin-left: 40vh; /* Déplace le texte vers la gauche de 40vh (40% de la hauteur de la fenêtre) */
+    font-size: 1.8vh; /* Définit la taille de la police en 1.8vh (1.8% de la hauteur de la fenêtre) */
+    margin-top: -2.8vh; /* Déplace le texte vers le haut de 2.8vh (2.8% de la hauteur de la fenêtre) */
 }
 
-#category-btns .category-btn{
-    padding: 10px 20px;
-    margin: 5px ;
-    border: 1px solid #088178;
-    border-radius: 5px;
-    text-decoration: none;
-    color: black;
+#category-btns {
+    margin-top: 5vh; /* Ajoute une marge supérieure de 5vh (5% de la hauteur de la fenêtre) */
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    justify-content: center; /* Centre le contenu horizontalement */
 }
 
-#category-btns .category-btn:hover{
-    background-color: #465b52;
-    color: #fff;
+#category-btns .category-btn {
+    padding: 10px 20px; /* Définit les rembourrages pour le bouton */
+    margin: 5px; /* Ajoute une marge de 5px de tous les côtés du bouton */
+    border: 1px solid #088178; /* Ajoute une bordure de 1px solide de couleur turquoise */
+    border-radius: 5px; /* Arrondit les coins du bouton */
+    text-decoration: none; /* Supprime la décoration des liens (soulignement par défaut) */
+    color: black; /* Couleur du texte en noir */
 }
 
-.btnb{
-    
-    text-decoration: none;
-    margin-right: 5vh;
-    border: 1px solid #088178;
-    border-radius: 5px;
-    margin: 5vh;
-    padding: 10px;
-    color: rgb(0, 0, 0);
-    background-color: #fff;
-    cursor: pointer;
+#category-btns .category-btn:hover {
+    background-color: #465b52; /* Couleur de fond en vert foncé au survol */
+    color: #fff; /* Couleur du texte en blanc au survol */
 }
 
-.btnb:hover{
-    background-color: #088178;
-    color: white;
+.btnb {
+    text-decoration: none; /* Supprime la décoration des liens (soulignement par défaut) */
+    margin-right: 5vh; /* Ajoute une marge de 5vh (5% de la hauteur de la fenêtre) à droite */
+    border: 1px solid #088178; /* Ajoute une bordure de 1px solide de couleur turquoise */
+    border-radius: 5px; /* Arrondit les coins du bouton */
+    margin: 5vh; /* Ajoute une marge de 5vh (5% de la hauteur de la fenêtre) de tous les côtés du bouton */
+    padding: 10px; /* Définit le rembourrage du bouton */
+    color: rgb(0, 0, 0); /* Couleur du texte en noir */
+    background-color: #fff; /* Couleur de fond en blanc */
+    cursor: pointer; /* Change le curseur en main au survol du bouton */
 }
 
-.con-btn{
-    display: flex;
-    justify-content: space-between;
+.btnb:hover {
+    background-color: #088178; /* Couleur de fond en turquoise au survol */
+    color: white; /* Couleur du texte en blanc au survol */
 }
 
-.btn-show{
-    
-    text-decoration: none;
-    margin: 5vh 1vh 5vh 3vh;
-
-    border: 1px solid #088178;
-    border-radius: 5px;
-    padding: 10px;
-    color: rgb(0, 0, 0);
-    background-color: #fff;
+.con-btn {
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    justify-content: space-between; /* Répartit l'espace disponible entre les éléments enfants horizontalement */
 }
 
-.btn-show:hover{
-    background-color: #088178;
-    color: white;
+.btn-show {
+    text-decoration: none; /* Supprime la décoration des liens (soulignement par défaut) */
+    margin: 5vh 1vh 5vh 3vh; /* Ajoute des marges individuelles */
+    border: 1px solid #088178; /* Ajoute une bordure de 1px solide de couleur turquoise */
+    border-radius: 5px; /* Arrondit les coins du bouton */
+    padding: 10px; /* Définit le rembourrage du bouton */
+    color: rgb(0, 0, 0); /* Couleur du texte en noir */
+    background-color: #fff; /* Couleur de fond en blanc */
 }
 
-.position{
-    display: flex;
-    justify-content: center;
-    margin: 10px;   
+.btn-show:hover {
+    background-color: #088178; /* Couleur de fond en turquoise au survol */
+    color: white; /* Couleur du texte en blanc au survol */
 }
 
 
-.positionSupp{
-    display: flex;
-    justify-content: start;
-    margin-top:-3vh;
-    margin-left: 16vh;
+.position {
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    justify-content: center; /* Centre le contenu horizontalement */
+    margin: 10px; /* Ajoute une marge de 10px de tous les côtés */
 }
 
-.form-style{
-    padding: 10px;
-    border: 1px solid;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 3vh;
+.positionSupp {
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    justify-content: start; /* Aligne le contenu à gauche */
+    margin-top: -3vh; /* Déplace le contenu vers le haut de 3vh (3% de la hauteur de la fenêtre) */
+    margin-left: 16vh; /* Déplace le contenu vers la gauche de 16vh (16% de la hauteur de la fenêtre) */
 }
 
-.form-style-text{
-    position:sticky;
-    padding: 10px;
-    width: 50vh;
-    height: 10vh;
-    border: 1px solid;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2vh;
-    max-width: 520px;
+.form-style {
+    padding: 10px; /* Définit le rembourrage de 10px de tous les côtés */
+    border: 1px solid; /* Ajoute une bordure de 1px solide */
+    border-radius: 5px; /* Arrondit les coins du formulaire */
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    justify-content: center; /* Centre le contenu horizontalement */
+    margin-bottom: 3vh; /* Ajoute une marge inférieure de 3vh (3% de la hauteur de la fenêtre) */
 }
 
-.form-style-email{
-    padding: 10px;
-    width: 50vh;
-    border: 1px solid;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 3vh;
+.form-style-text {
+    position: sticky; /* Positionne l'élément de manière sticky */
+    padding: 10px; /* Définit le rembourrage de 10px de tous les côtés */
+    width: 50vh; /* Largeur de 50vh (50% de la hauteur de la fenêtre) */
+    height: 10vh; /* Hauteur de 10vh (10% de la hauteur de la fenêtre) */
+    border: 1px solid; /* Ajoute une bordure de 1px solide */
+    border-radius: 5px; /* Arrondit les coins du formulaire */
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    justify-content: center; /* Centre le contenu horizontalement */
+    margin-bottom: 2vh; /* Ajoute une marge inférieure de 2vh (2% de la hauteur de la fenêtre) */
+    max-width: 520px; /* Largeur maximale de 520px */
 }
 
-.form-style-new{
-    padding: 10px;
-    min-width: 50vh;
-    max-width: 50vh;
-    border: 1px solid;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 3vh;
+.form-style-email {
+    padding: 10px; /* Définit le rembourrage de 10px de tous les côtés */
+    width: 50vh; /* Largeur de 50vh (50% de la hauteur de la fenêtre) */
+    border: 1px solid; /* Ajoute une bordure de 1px solide */
+    border-radius: 5px; /* Arrondit les coins du formulaire */
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    justify-content: center; /* Centre le contenu horizontalement */
+    margin-bottom: 3vh; /* Ajoute une marge inférieure de 3vh (3% de la hauteur de la fenêtre) */
 }
 
-.form-style-new-autor{
-    padding: 10px;
-    min-width: 50vh;
-    max-width: 50vh;
-    border: 1px solid;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 3vh;
-    margin-left:-28px;
+.form-style-new {
+    padding: 10px; /* Définit le rembourrage de 10px de tous les côtés */
+    min-width: 50vh; /* Largeur minimale de 50vh (50% de la hauteur de la fenêtre) */
+    max-width: 50vh; /* Largeur maximale de 50vh (50% de la hauteur de la fenêtre) */
+    border: 1px solid; /* Ajoute une bordure de 1px solide */
+    border-radius: 5px; /* Arrondit les coins du formulaire */
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    justify-content: center; /* Centre le contenu horizontalement */
+    margin-bottom: 3vh; /* Ajoute une marge inférieure de 3vh (3% de la hauteur de la fenêtre) */
 }
 
-.form-style-pass{
-    position:sticky;
-    padding: 10px;
-    width: 50vh;
-    border: 1px solid;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2vh;
-    max-width: 520px;
+.form-style-new-autor {
+    padding: 10px; /* Définit le rembourrage de 10px de tous les côtés */
+    min-width: 50vh; /* Largeur minimale de 50vh (50% de la hauteur de la fenêtre) */
+    max-width: 50vh; /* Largeur maximale de 50vh (50% de la hauteur de la fenêtre) */
+    border: 1px solid; /* Ajoute une bordure de 1px solide */
+    border-radius: 5px; /* Arrondit les coins du formulaire */
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    justify-content: center; /* Centre le contenu horizontalement */
+    margin-bottom: 3vh; /* Ajoute une marge inférieure de 3vh (3% de la hauteur de la fenêtre) */
+    margin-left: -28px; /* Déplace le formulaire vers la gauche de 28px */
 }
 
-.div-form-style{
-    display: flex;
-    justify-content: center;
-    margin: auto;
+.form-style-pass {
+    position: sticky; /* Positionne l'élément de manière sticky */
+    padding: 10px; /* Définit le rembourrage de 10px de tous les côtés */
+    width: 50vh; /* Largeur de 50vh (50% de la hauteur de la fenêtre) */
+    border: 1px solid; /* Ajoute une bordure de 1px solide */
+    border-radius: 5px; /* Arrondit les coins du formulaire */
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    justify-content: center; /* Centre le contenu horizontalement */
+    margin-bottom: 2vh; /* Ajoute une marge inférieure de 2vh (2% de la hauteur de la fenêtre) */
+    max-width: 520px; /* Largeur maximale de 520px */
+}
+
+.div-form-style {
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    justify-content: center; /* Centre le contenu horizontalement */
+    margin: auto; /* Centre le contenu verticalement et horizontalement */
 }
 
 .size {
-    width: 47vh;
-    min-width: 47vh;
-    max-width: 47vh;
+    width: 47vh; /* Largeur de 47vh (47% de la hauteur de la fenêtre) */
+    min-width: 47vh; /* Largeur minimale de 47vh (47% de la hauteur de la fenêtre) */
+    max-width: 47vh; /* Largeur maximale de 47vh (47% de la hauteur de la fenêtre) */
 }
 
 .style-livre-btn {
-    text-decoration: none;
+    text-decoration: none; /* Supprime la décoration des liens (soulignement par défaut) */
 }
 
 /* styles page show book */
 
 #header-bookinfo {
-    display: flex;
-    justify-content: center;
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    justify-content: center; /* Centre le contenu horizontalement */
 }
 
-.book-img img{
-    margin: 1.5vh;
-    margin-top: 5.3vh;
-    border-radius: 1vh;
+.book-img img {
+    margin: 1.5vh; /* Ajoute une marge de 1.5vh de tous les côtés */
+    margin-top: 5.3vh; /* Ajoute une marge supérieure de 5.3vh */
+    border-radius: 1vh; /* Arrondit les coins de l'image */
 }
 
-.book-title-autor{
-    margin-top: 16vh;
+.book-title-autor {
+    margin-top: 16vh; /* Ajoute une marge supérieure de 16vh */
 }
 
-.book-title{
-    font-size: 6vh;
-    font-weight: 600;
-    color: #088178;
+.book-title {
+    font-size: 6vh; /* Taille de police de 6vh (6% de la hauteur de la fenêtre) */
+    font-weight: 600; /* Poids de la police en gras (600) */
+    color: #088178; /* Couleur du texte en hexadécimal */
 }
 
-.book-autor{
-    font-size: 3vh;
-    font-weight: 500;
+.book-autor {
+    font-size: 3vh; /* Taille de police de 3vh (3% de la hauteur de la fenêtre) */
+    font-weight: 500; /* Poids de la police en gras (500) */
 }
 
-.book-info{
-    margin: 1.5vh;
+.book-info {
+    margin: 1.5vh; /* Ajoute une marge de 1.5vh de tous les côtés */
 }
 
 .chapters {
-    display:grid;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
+    display: grid; /* Affiche les éléments enfants en tant que grille */
+    margin-top: 5vh; /* Ajoute une marge supérieure de 5vh */
+    margin-bottom: 5vh; /* Ajoute une marge inférieure de 5vh */
 }
 
-.chapters small{
-    font-size: 2vh;
-    font-weight: 500;
+.chapters small {
+    font-size: 2vh; /* Taille de police de 2vh (2% de la hauteur de la fenêtre) */
+    font-weight: 500; /* Poids de la police en gras (500) */
 }
-.chapters strong{
-    font-size: 3vh;
-    margin-top: 6px;
+
+.chapters strong {
+    font-size: 3vh; /* Taille de police de 3vh (3% de la hauteur de la fenêtre) */
+    margin-top: 6px; /* Ajoute une marge supérieure de 6px */
 }
 
 .category {
-    display: grid;
+    display: grid; /* Affiche les éléments enfants en tant que grille */
 }
 
-.category-btn-info{
-    padding: 10px 20px;
-    margin: 5px ;
-    border: 1px solid #088178;
-    border-radius: 5px;
-    text-decoration: none;
-    color: black;
+.category-btn-info {
+    padding: 10px 20px; /* Ajoute un rembourrage de 10px en haut et en bas, 20px à gauche et à droite */
+    margin: 5px ; /* Ajoute une marge de 5px de tous les côtés */
+    border: 1px solid #088178; /* Ajoute une bordure de 1px solide avec une couleur spécifiée */
+    border-radius: 5px; /* Arrondit les coins du bouton */
+    text-decoration: none; /* Supprime la décoration des liens (soulignement par défaut) */
+    color: black; /* Couleur du texte en noir */
 }
 
-.book-links{
-    margin-top: 4vh;
-    margin-bottom: 1.5vh;
-    display: flex;
-    justify-content:center;
+.book-links {
+    margin-top: 4vh; /* Ajoute une marge supérieure de 4vh */
+    margin-bottom: 1.5vh; /* Ajoute une marge inférieure de 1.5vh */
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    justify-content: center; /* Centre le contenu horizontalement */
 }
 
-.link-read{
-    padding: 10px 25px;
-    border: 1px solid #ffffff;
-    border-radius: 3px;
-    text-decoration: none;
-    color: #fffefe;
-    background-color: #088178;
+.link-read {
+    padding: 10px 25px; /* Ajoute un rembourrage de 10px en haut et en bas, 25px à gauche et à droite */
+    border: 1px solid #ffffff; /* Ajoute une bordure de 1px solide avec une couleur spécifiée */
+    border-radius: 3px; /* Arrondit les coins du bouton */
+    text-decoration: none; /* Supprime la décoration des liens (soulignement par défaut) */
+    color: #fffefe; /* Couleur du texte en blanc */
+    background-color: #088178; /* Couleur de fond du bouton en hexadécimal */
 }
 
-.link-library{
-    padding: 10px 25px;
-    border: 1px solid #108880;
-    border-radius: 3px;
-    text-decoration: none;
-    color: #000000;
-    background-color: #E3E6F3;
-    margin-left: 1vh;
+.link-library {
+    padding: 10px 25px; /* Ajoute un rembourrage de 10px en haut et en bas, 25px à gauche et à droite */
+    border: 1px solid #108880; /* Ajoute une bordure de 1px solide avec une couleur spécifiée */
+    border-radius: 3px; /* Arrondit les coins du bouton */
+    text-decoration: none; /* Supprime la décoration des liens (soulignement par défaut) */
+    color: #000000; /* Couleur du texte en noir */
+    background-color: #E3E6F3; /* Couleur de fond du bouton en hexadécimal */
+    margin-left: 1vh; /* Ajoute une marge à gauche de 1vh */
 }
 
-.link-edit{
-    padding: 10px 25px;
-    border: 1px solid #ffffff;
-    border-radius: 3px;
-    text-decoration: none;
-    color: #fffefe;
-    background-color: #085550;
-    margin-left: 5vh;
+.link-edit {
+    padding: 10px 25px; /* Ajoute un rembourrage de 10px en haut et en bas, 25px à gauche et à droite */
+    border: 1px solid #ffffff; /* Ajoute une bordure de 1px solide avec une couleur spécifiée */
+    border-radius: 3px; /* Arrondit les coins du bouton */
+    text-decoration: none; /* Supprime la décoration des liens (soulignement par défaut) */
+    color: #fffefe; /* Couleur du texte en blanc */
+    background-color: #085550; /* Couleur de fond du bouton en hexadécimal */
+    margin-left: 5vh; /* Ajoute une marge à gauche de 5vh */
 }
 
-.link-read:hover{
-    background-color: transparent;
-    color: #000000;
-    border: 1px solid #088178;
+.link-read:hover {
+    background-color: transparent; /* Fond transparent au survol */
+    color: #000000; /* Couleur du texte en noir au survol */
+    border: 1px solid #088178; /* Bordure de 1px solide avec une autre couleur au survol */
 }
-.link-library:hover{
-    background-color: #088178;
-    color: #fff;
-    border: 1px solid #088178;
+
+.link-library:hover {
+    background-color: #088178; /* Couleur de fond au survol en hexadécimal */
+    color: #fff; /* Couleur du texte en blanc au survol */
+    border: 1px solid #088178; /* Bordure de 1px solide avec la même couleur au survol */
 }
 
 #book-tab-links {
-    display: flex;
-    justify-content:space-around;
-    align-items: center;
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    justify-content: space-around; /* Espace équitablement le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement */
 }
 
-/* #book-tab-links .link{
-    color: #108880;
-    font-size: 3vh;
-} */
+
 
 /* Style  pour les liens Résumé et Chapitres */
 #resume-link, #chapitres-link {
-    color: gray;
-    text-decoration: none; 
-    border-bottom: 2px solid transparent; 
-    transition: color 0.3s, border-bottom 0.3s;
-    font-size: 3vh;
-  }
-  
-  /* Style lorsque le lien est cliqué ou survolé */
-  #resume-link:hover, #chapitres-link:hover,
-  #resume-link:focus, #chapitres-link:focus { 
-    color: #108880; 
-    border-bottom: 2px solid black; 
-  }
-  
-
-#book-tab-links .marg-l{
-    margin-left: -100vh;
-}
-#book-tab-links .marg-r{
-    margin-right: -100vh;
+    color: gray; /* Couleur du texte en gris */
+    text-decoration: none; /* Supprime la décoration des liens (soulignement par défaut) */
+    border-bottom: 2px solid transparent; /* Ajoute une bordure en bas de 2px de couleur transparente */
+    transition: color 0.3s, border-bottom 0.3s; /* Ajoute une transition de 0.3s pour la couleur et la bordure en bas */
+    font-size: 3vh; /* Taille de la police de 3vh */
 }
 
-.d-flex{
-    display: flex;
-    
+/* Style lorsque le lien est cliqué ou survolé */
+#resume-link:hover, #chapitres-link:hover,
+#resume-link:focus, #chapitres-link:focus {
+    color: #108880; /* Couleur du texte en hexadécimal */
+    border-bottom: 2px solid black; /* Bordure en bas de 2px de couleur noire */
+}
+
+#book-tab-links .marg-l {
+    margin-left: -100vh; /* Marge à gauche de -100vh (déplacement vers la gauche) */
+}
+
+#book-tab-links .marg-r {
+    margin-right: -100vh; /* Marge à droite de -100vh (déplacement vers la droite) */
+}
+
+.d-flex {
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
 }
 
 /* Tableau */
 .table {
-    width: 80%;
-    margin-left: 20vh;
-    border-collapse: collapse;
-    background-color: #fff; /* Fond du tableau */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    width: 80%; /* Largeur du tableau de 80% de la largeur de son conteneur */
+    margin-left: 20vh; /* Marge à gauche de 20vh (unité de vue par rapport à la hauteur de la fenêtre) */
+    border-collapse: collapse; /* Fusion des bordures de cellules */
+    background-color: #fff; /* Fond du tableau en blanc */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07); /* Ombre légère */
     border-radius: 10px; /* Coins arrondis du tableau */
-    margin-top: 20px;
+    margin-top: 20px; /* Marge en haut de 20px */
 }
-
 
 .table th {
-    background-color: #088178; 
-    color: #fff; 
-    text-align: left;
-    padding: 10px;
+    background-color: #088178; /* Fond des en-têtes de colonnes en bleu */
+    color: #fff; /* Couleur du texte en blanc */
+    text-align: left; /* Alignement du texte à gauche */
+    padding: 10px; /* Espacement interne de 10px */
 }
-
 
 .table-cell {
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-
+    padding: 10px; /* Espacement interne de 10px pour les cellules */
+    border-bottom: 1px solid #ccc; /* Bordure inférieure de 1px solide en gris clair */
 }
 
-
 .button-link {
-    text-decoration: none;
-    color: #088178; 
-    font-weight: 600;
-    padding: 8px 12px;
-    border: 1px solid #088178;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-    margin-right: 10px;
+    text-decoration: none; /* Supprime la décoration des liens */
+    color: #088178; /* Couleur du texte en bleu */
+    font-weight: 600; /* Graisse du texte */
+    padding: 8px 12px; /* Espacement interne de 8px en haut/bas et 12px à gauche/droite */
+    border: 1px solid #088178; /* Bordure de 1px solide en bleu */
+    border-radius: 5px; /* Coins arrondis du bouton */
+    transition: background-color 0.3s, color 0.3s; /* Transition de couleur en 0.3s */
+    margin-right: 10px; /* Marge à droite de 10px */
 }
 
 .button-link:hover {
-    background-color: #088178; 
-    color: #fff; 
+    background-color: #088178; /* Fond en bleu au survol */
+    color: #fff; /* Texte en blanc au survol */
 }
 
 .button-link-delete {
-    text-decoration: none;
-    color: #088178;
-    font-weight: 600;
-    padding: 8px 12px;
-    border: 1px solid #088178;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-
+    text-decoration: none; /* Supprime la décoration des liens */
+    color: #088178; /* Couleur du texte en bleu */
+    font-weight: 600; /* Graisse du texte */
+    padding: 8px 12px; /* Espacement interne de 8px en haut/bas et 12px à gauche/droite */
+    border: 1px solid #088178; /* Bordure de 1px solide en bleu */
+    border-radius: 5px; /* Coins arrondis du bouton */
+    transition: background-color 0.3s, color 0.3s; /* Transition de couleur en 0.3s */
 }
 
 .button-link-delete:hover {
-    background-color: #088178; 
-    color: #fff; 
+    background-color: #088178; /* Fond en bleu au survol */
+    color: #fff; /* Texte en blanc au survol */
 }
 
 .align-items {
-    display: flex;
-    align-items: center;
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    align-items: center; /* Centre les éléments verticalement */
 }
 
 .align-justify {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    align-items: center; /* Centre les éléments verticalement */
+    justify-content: center; /* Centre les éléments horizontalement */
 }
+
 
 /* PArtie du Site Admin */
 
 #admin {
-    display: flex;
-    justify-content: center;
+    display: flex; /* Affiche les éléments en tant que flexbox */
+    justify-content: center; /* Centre les éléments horizontalement */
 }
 
-#admin .admin-link{
-    display: flex;
-    flex-direction: column;
+#admin .admin-link {
+    display: flex; /* Affiche les éléments enfants en tant que flexbox */
+    flex-direction: column; /* Ordonne les éléments enfants en colonne */
 }
 
 .aPP {
-    margin: 30px;
-    padding: 5px;
-    border: 1px solid #088178;
-    border-radius: 5px;
+    margin: 30px; /* Marge extérieure de 30px */
+    padding: 5px; /* Espacement interne de 5px */
+    border: 1px solid #088178; /* Bordure de 1px solide en bleu */
+    border-radius: 5px; /* Coins arrondis */
 }
 
-/* Pages du site  */
+/* Pages du site */
 
 .content-polit {
-    margin: 10vh 10vh;
+    margin: 10vh 10vh; /* Marge de 10vh en haut et 10vh à gauche */
 }
 
-.content-polit h2{
-    font-size: 3vh;
+.content-polit h2 {
+    font-size: 3vh; /* Taille de police de 3vh */
 }
 
-/* Login Pgae */
+/* Page de connexion */
 
 .container-login {
-    display: grid;
-    justify-content: center;
-    align-items: center;
+    display: grid; /* Affiche les éléments en tant que grille */
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
 }
 
-/* page chapitre */
+/* Page du chapitre */
 
-.Bigborder{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.Bigborder {
+    display: flex; /* Affiche les éléments en tant que flexbox */
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
 }
 
-.border{
-    height: 1px;
-    width: 90%;
-    border: 1px solid rgb(74, 74, 74);
-    margin-bottom: 3vh;
+.border {
+    height: 1px; /* Hauteur de la ligne de 1px */
+    width: 90%; /* Largeur de 90% */
+    border: 1px solid rgb(74, 74, 74); /* Bordure de 1px solide en gris */
+    margin-bottom: 3vh; /* Marge en bas de 3vh */
 }
 
 .container {
-    width: 100%;
-    background-color:transparent;
-    padding-bottom: -6vh;
-    /* display: inline-flex; */
+    width: 100%; /* Largeur de 100% */
+    background-color: transparent; /* Fond transparent */
+    padding-bottom: -6vh; /* Marge inférieure de -6vh (étrange, car les marges négatives ont peu d'effet sur les conteneurs) */
 }
 
 #contentChapter {
-    width: 80vw;
-    padding: 10px;
-    margin-left: 10vw;
-    margin-top: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top: 2px solid gray;
-    border-bottom: 2px solid gray;
-    display: none;
+    width: 80vw; /* Largeur de 80% de la largeur de la fenêtre */
+    padding: 10px; /* Espacement interne de 10px */
+    margin-left: 10vw; /* Marge à gauche de 10vw */
+    margin-top: 10vh; /* Marge en haut de 10vh */
+    display: flex; /* Affiche les éléments en tant que flexbox */
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+    border-top: 2px solid gray; /* Bordure supérieure de 2px solide en gris */
+    border-bottom: 2px solid gray; /* Bordure inférieure de 2px solide en gris */
+    display: none; /* Initialement masqué */
 }
+
 #contentChapterShow {
-    width: 80vw;
-    padding: 10px;
-    margin-left: 10vw;
-    margin-top: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top: 2px solid gray;
-    border-bottom: 2px solid gray;
+    width: 80vw; /* Largeur de 80% de la largeur de la fenêtre */
+    padding: 10px; /* Espacement interne de 10px */
+    margin-left: 10vw; /* Marge à gauche de 10vw */
+    margin-top: 10vh; /* Marge en haut de 10vh */
+    display: flex; /* Affiche les éléments en tant que flexbox */
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+    border-top: 2px solid gray; /* Bordure supérieure de 2px solide en gris */
+    border-bottom: 2px solid gray; /* Bordure inférieure de 2px solide en gris */
 }
 
 .content {
-    width: 80%;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    color: #333;
-    margin: 0 auto;
-    padding: 20px;
+    width: 80%; /* Largeur de 80% */
+    font-family: 'Roboto', sans-serif; /* Famille de police */
+    font-size: 16px; /* Taille de police de 16px */
+    color: #333; /* Couleur du texte en gris foncé */
+    margin: 0 auto; /* Marge extérieure de 0 en haut/bas et auto à gauche/droite (centre le contenu) */
+    padding: 20px; /* Espacement interne de 20px */
 }
+
 .content-chap {
-    width: 80%;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    color: #333;
-    margin: 0 auto;
-    padding: 20px;
+    width: 80%; /* Largeur de 80% */
+    font-family: 'Roboto', sans-serif; /* Famille de police */
+    font-size: 16px; /* Taille de police de 16px */
+    color: #333; /* Couleur du texte en gris foncé */
+    margin: 0 auto; /* Marge extérieure de 0 en haut/bas et auto à gauche/droite (centre le contenu) */
+    padding: 20px; /* Espacement interne de 20px */
 }
 
 #contentChapter h2 {
-    text-align: center;
-    font-size: 24px;
-    color: #163b39;
-    margin-bottom: 20px;
+    text-align: center; /* Alignement du texte au centre */
+    font-size: 24px; /* Taille de police de 24px */
+    color: #163b39; /* Couleur du texte en vert foncé */
+    margin-bottom: 20px; /* Marge en bas de 20px */
 }
 
 #contentChapter ul {
-    list-style: none;
-    padding: 0;
+    list-style: none; /* Supprime les puces de liste */
+    padding: 0; /* Aucun espacement interne */
 }
 
 #contentChapter li {
-    margin: 10px ;
-    /* border-top: 1px solid #085550;
-    border-bottom: 1px solid #085550; */
+    margin: 10px; /* Marge externe de 10px */
 }
 
 #contentChapter a {
-    text-decoration: none;
-    color: #333;
-    display: flex;
-    align-items: center;
-    transition: 0.3s ease;
+    text-decoration: none; /* Supprime la soulignement des liens */
+    color: #333; /* Couleur du texte en gris foncé */
+    display: flex; /* Affiche les éléments en tant que flexbox */
+    align-items: center; /* Centre les éléments verticalement */
+    transition: 0.3s ease; /* Transition en douceur de 0.3s */
 }
 
 #contentChapter a:hover {
-    text-decoration: none;
-    color: #088178;
-    display: flex;
-    align-items: center;
+    text-decoration: none; /* Supprime la soulignement des liens au survol */
+    color: #088178; /* Couleur du texte en bleu turquoise au survol */
+    display: flex; /* Affiche les éléments en tant que flexbox au survol */
+    align-items: center; /* Centre les éléments verticalement au survol */
 }
 
 #contentChapter .chapter-number {
-    font-weight: bold;
-    margin-right: 10px;
-    font-size: 18px;
+    font-weight: bold; /* Texte en gras */
+    margin-right: 10px; /* Marge à droite de 10px */
+    font-size: 18px; /* Taille de police de 18px */
 }
 
 #contentChapter .chapter-title {
-    font-size: 16px;
+    font-size: 16px; /* Taille de police de 16px */
 }
 
 #contentChapter .content {
-    margin-top: 5vh;
+    margin-top: 5vh; /* Marge en haut de 5vh */
 }
-
 
 #about {
-    margin: 0px 200px;
+    margin: 0px 200px; /* Marge de 0px en haut/bas et 200px à gauche/droite */
 }
 
+/* Page de recherche */
 
-
-
-
- /* Search Page */
-
- #container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#container {
+    display: flex; /* Affiche les éléments en tant que flexbox */
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
 }
 
 #container .btnb {
-margin-bottom: 71px;
-margin-left: -0.1px;
-border-radius: 0px 5px 5px 0px;
+    margin-bottom: 71px; /* Marge en bas de 71px */
+    margin-left: -0.1px; /* Marge à gauche de -0.1px (peu d'effet) */
+    border-radius: 0px 5px 5px 0px; /* Coins arrondis sur le côté droit */
 }
 
-.content .btnb:hover{
-    color: white;
+.content .btnb:hover {
+    color: white; /* Couleur du texte en blanc au survol */
 }
 
-.back-color{
-    background-color: transparent;
+.back-color {
+    background-color: transparent; /* Fond transparent */
 }
 
 .form-style-search {
-    padding: 10px;
-    border: 1px solid;
-    border-right: none;
-    margin-bottom: 3vh;
-    border-radius: 5px 0px 0px 5px;
-    margin-left: 50px;
-    width: 45vw;
-    
+    padding: 10px; /* Espacement interne de 10px */
+    border: 1px solid; /* Bordure de 1px solide */
+    border-right: none; /* Pas de bordure à droite */
+    margin-bottom: 3vh; /* Marge en bas de 3vh */
+    border-radius: 5px 0px 0px 5px; /* Coins arrondis sur le côté gauche */
+    margin-left: 50px; /* Marge à gauche de 50px */
+    width: 45vw; /* Largeur de 45% de la largeur de la fenêtre */
 }
 
-/* NEW Page */
+/* Page "Nouveau" */
 
 .new-prop {
-    background-color: transparent;
-    margin-left: -0.001vh;
-    margin-top: 4.2vh;
-    height: 4.2vh;
+    background-color: transparent; /* Fond transparent */
+    margin-left: -0.001vh; /* Marge à gauche de -0.001vh (peu d'effet) */
+    margin-top: 4.2vh; /* Marge en haut de 4.2vh */
+    height: 4.2vh; /* Hauteur de 4.2vh */
 }
 
 .new-prop-autor {
-    background-color: transparent;
-    margin-left: -0.001vh;
-    margin-top: 4.2vh;
-    height: 4.2vh;
-
-}
-.transparent{
-    background-color: transparent;
+    background-color: transparent; /* Fond transparent */
+    margin-left: -0.001vh; /* Marge à gauche de -0.001vh (peu d'effet) */
+    margin-top: 4.2vh; /* Marge en haut de 4.2vh */
+    height: 4.2vh; /* Hauteur de 4.2vh */
 }
 
-
-.navigation-center{
-    display: flex;
-    justify-content: space-around;
+.transparent {
+    background-color: transparent; /* Fond transparent */
 }
 
-.edit-chap{
-    display: flex;
-    text-align: center;
-    justify-content: center;
+.navigation-center {
+    display: flex; /* Affiche les éléments en tant que flexbox */
+    justify-content: space-around; /* Centre les éléments horizontalement avec un espacement égal */
 }
 
-.btn-banner{
-    padding: 10px;
-    background-color: transparent;
-    color: white;
-    border: 1px solid white;
+.edit-chap {
+    display: flex; /* Affiche les éléments en tant que flexbox */
+    text-align: center; /* Alignement du texte au centre */
+    justify-content: center; /* Centre les éléments horizontalement */
 }
-.btn-banner:hover{
-    color: white;
+
+.btn-banner {
+    padding: 10px; /* Espacement interne de 10px */
+    background-color: transparent; /* Fond transparent */
+    color: white; /* Couleur du texte en blanc */
+    border: 1px solid white; /* Bordure de 1px solide en blanc */
+}
+
+.btn-banner:hover {
+    color: white; /* Couleur du texte en blanc au survol */
 }
 
 
 /*! Start Media Query */
 
-
 @media (max-width: 799px) {
     
     .section-p1 {
-        padding: 40px 40px;
+        padding: 40px 40px; /* Espacement interne de 40px sur les côtés */
     }
     
     #navbar  {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        position: fixed;
-        top: 0;
-        right: -300px;
-        height: 100vh;
-        width: 300px;
-        background-color: #E3E6F3;
-        box-shadow: 0 40px  60px rgba(0,0,0,0.1);
-        padding: 80px 0 0 10px;
-        transition: right 0.3s;
+        flex-direction: column; /* Affiche les éléments en tant que colonne */
+        align-items: flex-start; /* Alignement à gauche */
+        justify-content: flex-start; /* Alignement en haut */
+        position: fixed; /* Position fixe */
+        top: 0; /* En haut de l'écran */
+        right: -300px; /* Position initiale à droite de -300px (caché) */
+        height: 100vh; /* Hauteur de 100% de la hauteur de la vue */
+        width: 300px; /* Largeur de 300px */
+        background-color: #E3E6F3; /* Couleur de fond */
+        box-shadow: 0 40px  60px rgba(0,0,0,0.1); /* Ombre */
+        padding: 80px 0 0 10px; /* Espacement interne */
+        transition: right 0.3s; /* Transition de 0.3s sur la propriété "right" */
     }
     
     #navbar.active{
-        right: 0;
+        right: 0; /* Position à droite de 0px (visible) lorsqu'il est actif */
     }
 
     #navbar li{
-        margin-bottom: 25px;
+        margin-bottom: 25px; /* Marge en bas de 25px entre les éléments de la liste */
     }
 
      #mobile {
         display: flex;
-        align-items: center;
+        align-items: center; /* Aligne les éléments du contenu verticalement */
     }
 
     #mobile i{
-        color: #1a1a1a;
-        font-size: 24px;
-        padding-left: 20px;
-        cursor: pointer;
+        color: #1a1a1a; /* Couleur de l'icône en gris foncé */
+        font-size: 24px; /* Taille de l'icône de 24px */
+        padding-left: 20px; /* Marge à gauche de 20px */
+        cursor: pointer; /* Curseur de type "pointer" au survol */
     }  
 
     #close {
-        display: initial;
-        position: absolute;
-        top: 30px;
-        left: 30px;
-        color: #222;
-        font-size: 24px;
+        display: initial; /* Affichage initial (visible) */
+        position: absolute; /* Position absolue */
+        top: 30px; /* Position en haut de 30px */
+        left: 30px; /* Position à gauche de 30px */
+        color: #222; /* Couleur du texte en gris foncé */
+        font-size: 24px; /* Taille de police de 24px */
     }
 
     #hero {
-        height: 70vh;
-        padding: 0 80px;
-        background-position: top 30% right 30%;
+        height: 70vh; /* Hauteur de 70% de la hauteur de la vue */
+        padding: 0 80px; /* Espacement interne de 0 en haut/bas et 80px à gauche/droite */
+        background-position: top 30% right 30%; /* Position du fond */
     }
 
     #feature {
-        justify-content: center;
+        justify-content: center; /* Centre les éléments horizontalement */
     }
 
     #feature .fe-box {
-        margin: 15px 15px;
-        transition: 0.4s ease;
+        margin: 15px 15px; /* Marge de 15px autour des éléments */
+        transition: 0.4s ease; /* Transition de 0.4s en douceur */
     }
 
-    #book1 .book-container{
-        justify-content: center;
-    }
-    
-    #book1 .book {
-        margin: 15px;
-    }
-
-    #banner {
-        height: 28vh;
-    }
-
-    #sm-banner .banner-box {
-        min-width: 100%;
-        height: 30vh;
-    }
-
-
-    /* Pages auteur */
-
-.table {
-    width: 80%;
-    margin-left: 10vh;
-    border-collapse: collapse;
-    margin-top: 10vh;
-    margin-right: 10vh;
-}
-
-.div-form-style{
-    display: flex;
-    justify-content: center;
-    margin: auto;
-    margin-top: 4.5vh;
-}
-
-/* Pages Categorie */
-
-#category-btns{
-    margin-top: 5vh;
-    display: grid;
-    justify-content: center;
-}
-
-.title{
-    color: #088178;
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-    margin-bottom: 4vh;
-    font-size: 3vh;
-}
-
-
-
-#book1 .book-container {
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
-    flex-wrap: wrap;
-} 
+    #book1 .book-container {
+        display: flex;
+        justify-content: center; /* Centre les éléments horizontalement */
+        padding-top: 20px; /* Espacement en haut de 20px */
+        flex-wrap: wrap; /* Permet l'enroulement des éléments sur plusieurs lignes */
+    } 
 
 }
+
 
 @media (max-width: 477px) {
 
     .section-p1 {
-        padding: 20px;
+        padding: 20px; /* Espacement interne de 20px sur les côtés */
     }
 
     #header {
-        padding: 10px 30px;
+        padding: 10px 30px; /* Espacement interne du header */
     }
 
     h1 {
-        font-size: 38px;
+        font-size: 38px; /* Taille de police de 38px pour les titres de niveau 1 */
     }
 
     h2 {
-        font-size: 32px;
+        font-size: 32px; /* Taille de police de 32px pour les titres de niveau 2 */
     }
 
     #hero {
-        padding: 0 20px;
-        background-position: 55%;
+        padding: 0 20px; /* Espacement interne de 0 en haut/bas et 20px à gauche/droite */
+        background-position: 55%; /* Position du fond */
     }
 
     #feature .fe-box {
-        width: 155px;
-        margin:0 15px 15px 0;
+        width: 155px; /* Largeur des éléments */
+        margin:0 15px 15px 0; /* Marge autour des éléments */
     }
 
     #book1 .book {
-        width: 100%;
+        width: 100%; /* Largeur de 100% (occupant toute la largeur disponible) */
     }
 
     #banner {
-        height: 40vh;
+        height: 40vh; /* Hauteur de 40% de la hauteur de la vue */
     }
 
     #sm-banner .banner-box {
-        height: 40vh;
+        height: 40vh; /* Hauteur de 40% de la hauteur de la vue */
     }
     
     #sm-banner .banner-box2 {
-        margin-top: 20px;
+        margin-top: 20px; /* Marge en haut de 20px pour la deuxième boîte de bannière */
     }
 }
+
+

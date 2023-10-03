@@ -101,7 +101,7 @@ class ChapitreController extends AbstractController
         ]);
     }
 
-    #[Route('/admin/{id}', name: 'app_chapitre_delete', methods: ['POST'])]
+    #[Route('/{id}', name: 'app_chapitre_delete', methods: ['POST'])]
     public function delete(Request $request, Chapitre $chapitre, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$chapitre->getId(), $request->request->get('_token'))) {
