@@ -31,11 +31,16 @@ class RegistrationFormType extends AbstractType
                 new Email([
                     'message' => 'L\'adresse e-mail "{{ value }}" n\'est pas valide.',
                 ]),
+                new Regex([
+                    'pattern' => '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
+                    'message' => 'L\'adresse e-mail "{{ value }}" n\'est pas valide.',
+                ]),
             ],
             'attr' => [
                 'class' => 'form-style-email',
             ],
         ])
+        
         ->add('nom', TextType::class,[
             'attr' => [
                 'class' => 'form-style-email'
@@ -48,32 +53,42 @@ class RegistrationFormType extends AbstractType
         ])
         //formulaire de validateion de mot de passe
             
-            ->add('plainPassword', PasswordType::class, [
-                // instead of being set onto the object directly,
-                // this is read and encoded in the controller
-                'mapped' => false,
-                'attr' => [
-                    'class' => 'form-style-pass',
-                    'autocomplete' => 'new-password',
-                ],
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'Veuillez entrer un mot de passe.',
-                    ]),
-                    new Length([
-                        'min' => 9, // Longueur minimale de 9 caractères
-                        'minMessage' => 'Votre mot de passe doit contenir au moins {{ limit }} caractères.',
-                        // max length allowed by Symfony for security reasons
-                        'max' => 4096,
-                    ]),
-                    new Regex([
-                        'pattern' => '/^(?=.*[A-Z])(?=.*[0-9])(?=.*\W)/', // Au moins une majuscule, un chiffre, et un caractère spécial
-                        'message' => 'Votre mot de passe doit contenir au moins une lettre majuscule, un chiffre et un caractère spécial.',
-                    ]),
-                ],
-            ])
+        ->add('plainPassword', RepeatedType::class, [
+            'type' => PasswordType::class,
+            'mapped' => false,
+            'invalid_message' => 'Les champs de mot de passe doivent correspondre.',
+            'options' => ['attr' => ['class' => 'form-style-pass', 'autocomplete' => 'new-password', 'id' => 'inputPasswordR']],
+            'required' => true,
+            'first_options'  => ['label' => 'Mot de passe'],
+            'second_options' => ['label' => 'Répétez le mot de passe'],
+            'constraints' => [
+                new NotBlank([
+                    'message' => 'Veuillez entrer un mot de passe.',
+                ]),
+                new Length([
+                    'min' => 12, // Longueur minimale de 12 caractères
+                    'minMessage' => 'Votre mot de passe doit contenir au moins {{ limit }} caractères,',
+                    // max length allowed by Symfony for security reasons
+                    'max' => 4096,
+                ]),
+                new Regex([
+                    'pattern' => '/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\W)/', // Au moins une majuscule, un chiffre, et un caractère spécial
+                    'message' => ' une lettre majuscule,une lettre minuscule, un chiffre et un caractère spécial.',
+                ]),
+            ],
+        ])
+
+        ->add('agreeTerms', CheckboxType::class, [
+            'mapped' => false, 
+            'constraints' => [
+                new IsTrue([
+                    'message' => 'Vous devez accepter les termes et conditions.',
+                ]),
+            ],
+            'label' => 'J\'accepte les termes et conditions', 
+        ]);
             
-            ;
+            
     }
 
     public function configureOptions(OptionsResolver $resolver): void

@@ -36,3 +36,31 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Affichage mot de passe Connexion
+
+  const passwordField = document.getElementById("inputPassword");
+  const toggleButton = document.getElementById("togglePassword");
+
+  toggleButton.addEventListener("click", function () {
+    if (passwordField.type === "password") {
+      passwordField.type = "text";
+    } else {
+      passwordField.type = "password";
+   }
+  });
+
+//   Affichage mot de passe Inscription
+ 
+
+  const passwordFieldR = document.getElementById("inputPasswordR");
+  const toggleButtonR = document.getElementById("togglePasswordR");
+
+  toggleButtonR.addEventListener("click", function () {
+    if (passwordFieldR.type === "password") {
+      passwordFieldR.type = "text";
+    } else {
+      passwordFieldR.type = "password";
+   }
+  });
+
+ 

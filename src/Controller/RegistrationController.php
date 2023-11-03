@@ -3,27 +3,30 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use Symfony\Component\Mime\Email;
 use App\Form\RegistrationFormType;
+use Symfony\Component\Mime\Message;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 
 class RegistrationController extends AbstractController
 {
     #[Route('/register', name: 'app_register')]
-    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
+    public function register(Request $request,MailerInterface $mailer, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // encode the plain password
+            
             $user->setPassword(
                 $userPasswordHasher->hashPassword(
                     $user,
@@ -31,11 +34,26 @@ class RegistrationController extends AbstractController
                 )
             );
 
+
+            // Générer un token de confirmation unique
+            $confirmationToken = bin2hex(random_bytes(32));
+            $user->setConfirmationToken($confirmationToken);
+
             $entityManager->persist($user);
             $entityManager->flush();
-            // do anything else you need here, like send an email
 
-            return $this->redirectToRoute('app_pagefy');
+            // Envoyer l'e-mail de confirmation
+            $email = (new Email())
+                ->from('confirmation-mail@pagefy.fr')
+                ->to($user->getEmail())
+                ->subject('Confirmation d\'inscription')
+                ->html($this->renderView('confirmation/confirmation.html.twig', ['confirmationToken' => $confirmationToken]));
+
+            $mailer->send($email);
+
+
+            // Rediriger l'utilisateur vers une page de confirmation
+            return $this->render('confirmation/confirmMessage.html.twig');
         }
 
         return $this->render('registration/register.html.twig', [

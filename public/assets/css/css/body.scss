@@ -9,13 +9,6 @@
     background-color: #E3E6F3; /* Définit l'arrière-plan */
 }
 
-body {
-    width: 100%; /* Définit la largeur du corps de la page */
-    background-color: #E3E6F3 !important;
-}
-
-
-
 a {
     text-decoration: none; /* Supprime la décoration de soulignement pour les liens */
 }
@@ -50,7 +43,6 @@ p {
 
 .section-p1 {
     padding: 40px 80px; /* Définit les marges intérieures */
-    background-color: #E3E6F3;
 }
 
 .centered {
@@ -92,7 +84,9 @@ button.white {
     transition: 0.2s; /* Ajoute une transition */
 }
 
-
+body {
+    width: 100%; /* Définit la largeur du corps de la page */
+}
 
 
 
@@ -156,10 +150,6 @@ button.white {
     display: none; /* Masque initialement les éléments avec l'ID "close" */
 }
 
-.conReg {
-    border-bottom: 2px solid #085550;
-}
-
 /* Home Page */
 
 #hero {
@@ -196,9 +186,9 @@ button.white {
 }
 
 #title-genre {
-    height: 15vh; /* Définit la hauteur à 85% de la hauteur de la vue */
+    height: 85vh; /* Définit la hauteur à 85% de la hauteur de la vue */
     width: 100%; /* Définit la largeur à 100% */
-    margin-bottom: -60px; /* Définit une marge négative en bas pour créer un chevauchement */
+    margin-bottom: -650px; /* Définit une marge négative en bas pour créer un chevauchement */
     display: flex; /* Affiche les éléments enfants en tant que flexbox */
     justify-content: center; /* Centre horizontalement les éléments enfants */
 }
@@ -301,8 +291,7 @@ button.white {
 
 #book1 .book .des span {
     color: #606063; /* Définit la couleur du texte du span */
-    font-size: 14px; /* Définit la taille de la police du span */
-    font-weight: 600;
+    font-size: 12px; /* Définit la taille de la police du span */
 }
 
 #book1 .book .des h5 {
@@ -337,9 +326,6 @@ button.white {
     right: 20px; /* Définit la distance depuis la droite */
 }
 
-#book1 a {
-    text-decoration: none;
-}
 
 #banner {
     display: flex; /* Affiche les éléments enfants en tant que flexbox */
@@ -374,16 +360,8 @@ button.white {
     color: #ef3636; /* Définit la couleur du texte en rouge */
 }
 
-#banner  a{
-    color: #000000;
-    text-decoration: none;
-}
-
 #banner button:hover {
     background-color: #088178; /* Change la couleur de fond au survol */
-}
-#banner button:hover a{
-    background-color: transparent; /* Change la couleur de fond au survol */
     color: #fff; /* Change la couleur du texte au survol */
 }
 
@@ -438,8 +416,7 @@ footer {
     flex-wrap: wrap; /* Permet aux éléments de passer à la ligne lorsque l'espace est insuffisant */
     justify-content: space-between; /* Répartit l'espace disponible entre les éléments enfants horizontalement */
     box-shadow: 0 -5px 15px rgba(0,0,0,0.07); /* Ajoute une ombre sous le pied de page */
-    /* margin-top: 15vh; Définit une marge supérieure de 15vh (15% de la hauteur de la fenêtre) */
-    background-color: #E3E6F3;
+    margin-top: 15vh; /* Définit une marge supérieure de 15vh (15% de la hauteur de la fenêtre) */
 }
 
 footer .col {
@@ -447,14 +424,10 @@ footer .col {
     flex-direction: column; /* Définit la direction de la disposition en colonne */
     align-items: flex-start; /* Aligne le contenu à gauche horizontalement */
     margin-bottom: 20px; /* Ajoute une marge inférieure de 20px */
-    background-color: #E3E6F3;
-
 }
 
 footer .logo {
     margin-bottom: 30px; /* Ajoute une marge inférieure de 30px */
-    background-color: #E3E6F3;
-
 }
 
 footer h4 {
@@ -482,14 +455,6 @@ footer .copyright {
 .logo-mastercard {
     margin-left: 10px; /* Ajoute une marge à gauche de 10px */
 }
-
-
-.section-f1 {
-    width: 100vw;
-    height: 14vh;
-    background-color: #E3E6F3;
-}
-
 
 
 
@@ -547,7 +512,7 @@ footer .copyright {
     margin: 5vh; /* Ajoute une marge de 5vh (5% de la hauteur de la fenêtre) de tous les côtés du bouton */
     padding: 10px; /* Définit le rembourrage du bouton */
     color: rgb(0, 0, 0); /* Couleur du texte en noir */
-    /* background-color: #fff;  */
+    background-color: #fff; /* Couleur de fond en blanc */
     cursor: pointer; /* Change le curseur en main au survol du bouton */
 }
 
@@ -568,7 +533,7 @@ footer .copyright {
     border-radius: 5px; /* Arrondit les coins du bouton */
     padding: 10px; /* Définit le rembourrage du bouton */
     color: rgb(0, 0, 0); /* Couleur du texte en noir */
-    /* background-color: #fff; */
+    background-color: #fff; /* Couleur de fond en blanc */
 }
 
 .btn-show:hover {
@@ -823,7 +788,7 @@ footer .copyright {
     width: 80%; /* Largeur du tableau de 80% de la largeur de son conteneur */
     margin-left: 20vh; /* Marge à gauche de 20vh (unité de vue par rapport à la hauteur de la fenêtre) */
     border-collapse: collapse; /* Fusion des bordures de cellules */
-    /* background-color: #fff;  */
+    background-color: #fff; /* Fond du tableau en blanc */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07); /* Ombre légère */
     border-radius: 10px; /* Coins arrondis du tableau */
     margin-top: 20px; /* Marge en haut de 20px */
@@ -920,7 +885,6 @@ footer .copyright {
     justify-content: center; /* Centre les éléments horizontalement */
     align-items: center; /* Centre les éléments verticalement */
 }
-
 
 /* Page du chapitre */
 
@@ -1112,7 +1076,7 @@ footer .copyright {
 
 /*! Start Media Query */
 
-@media screen and (max-width: 799px) {
+@media (max-width: 799px) {
     
     .section-p1 {
         padding: 40px 40px; /* Espacement interne de 40px sur les côtés */
@@ -1141,10 +1105,6 @@ footer .copyright {
     #navbar li{
         margin-bottom: 25px; /* Marge en bas de 25px entre les éléments de la liste */
     }
-
-    #header {
-        position: relative;
-       }
 
      #mobile {
         display: flex;
@@ -1192,11 +1152,7 @@ footer .copyright {
 }
 
 
-@media screen and (max-width: 477px) {
-
-   #header {
-    position: relative;
-   }
+@media (max-width: 477px) {
 
     .section-p1 {
         padding: 20px; /* Espacement interne de 20px sur les côtés */

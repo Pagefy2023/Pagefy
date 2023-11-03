@@ -20,7 +20,10 @@
     <label for="inputEmail" >Email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-style-email" autocomplete="email" required autofocus>
     <label for="inputPassword">Mot de Passe </label>
+    <div class="d-flex">
     <input type="password" name="password" id="inputPassword" class="form-style-pass" autocomplete="current-password" required>
+    {# <button type="button" id="togglePassword"><i class="fa-regular fa-eye"></i></button> #}
+    </div>
     </div>
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
@@ -29,6 +32,9 @@
 
 <div class="position">
     <button class="btnb" type="submit">Se Connecter</button>
+</div>
+<div class="position">
+    <a class="reinit-passw" href="{{ path('app_forgot_password_request') }}" class="btn btn-primary">Réinitialiser le mot de passe</a>
 </div>
 </form>
 {% endblock %}

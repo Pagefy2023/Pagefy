@@ -38,6 +38,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\ManyToOne(inversedBy: 'users')]
     private ?Abonnement $abonnement = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $confirmationToken = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -140,6 +143,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setAbonnement(?Abonnement $abonnement): static
     {
         $this->abonnement = $abonnement;
+
+        return $this;
+    }
+
+    public function getConfirmationToken(): ?string
+    {
+        return $this->confirmationToken;
+    }
+
+    public function setConfirmationToken(?string $confirmationToken): static
+    {
+        $this->confirmationToken = $confirmationToken;
 
         return $this;
     }
