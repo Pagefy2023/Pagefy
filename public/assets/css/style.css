@@ -1126,7 +1126,7 @@ footer .copyright {
     
     #navbar  {
         display: flex;
-        flex-direction: column; /* Affiche les éléments en tant que colonne */
+        flex-direction: column; /* Affiche les éléments en tant que colone */
         align-items: flex-start; /* Alignement à gauche */
         justify-content: flex-start; /* Alignement en haut */
         position: fixed; /* Position fixe */
