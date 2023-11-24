@@ -18,7 +18,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 class ChapitreController extends AbstractController
 {
 
-    #[Route('/admin/livre/{id}', name: 'app_livre_chapitres', methods: ['GET'])]
+    #[Route('/moderator/livre/{id}', name: 'app_livre_chapitres', methods: ['GET'])]
     public function chapitresParLivre(Livre $livre): Response
     {  
         $chapitres = $livre->getChapitres();
@@ -30,7 +30,7 @@ class ChapitreController extends AbstractController
     }
 
 
-    #[Route('/admin/new', name: 'app_chapitre_new', methods: ['GET', 'POST'])]
+    #[Route('/moderator/new', name: 'app_chapitre_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $chapitre = new chapitre();
@@ -58,7 +58,7 @@ class ChapitreController extends AbstractController
 
 
 
-    #[Route('/{id}/', name: 'app_chapitre_show', methods: ['GET'])]
+    #[Route('/userAbonnee/{id}/', name: 'app_chapitre_show', methods: ['GET'])]
     public function show(LivreRepository $livreRepo,Chapitre $chapitre): Response
     {  
         $livre = $chapitre->getLivre();
@@ -79,7 +79,7 @@ class ChapitreController extends AbstractController
 
 
 
-    #[Route('/admin/{id}/edit', name: 'app_chapitre_edit', methods: ['GET', 'POST'])]
+    #[Route('/moderator/{id}/edit', name: 'app_chapitre_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Chapitre $chapitre, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(ChapitreType::class, $chapitre);
@@ -101,7 +101,7 @@ class ChapitreController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_chapitre_delete', methods: ['POST'])]
+    #[Route('/moderator/{id}', name: 'app_chapitre_delete', methods: ['POST'])]
     public function delete(Request $request, Chapitre $chapitre, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$chapitre->getId(), $request->request->get('_token'))) {

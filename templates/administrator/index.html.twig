@@ -16,5 +16,12 @@
         <a  class="btnb" href="{{ path('app_auteur_index') }}">Abonnement</a>
     </div>
 </section>
+{% if is_granted('ROLE_ADMIN')  %}
+<section id="admin">
+    <div class="admin-link">
+        <a  class="btnb" href="{{ path('app_user_index') }}">Utilisateurs</a>
+    </div>
+</section>
+{% endif %}
 
 {% endblock %}

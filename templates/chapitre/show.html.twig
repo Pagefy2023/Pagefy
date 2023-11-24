@@ -7,20 +7,24 @@
 
 <section id="titleChapter">
     <div class="container">
-        <a href="{{ path('app_livre_show', {'id': livre.id}) }}">
-            <h1 class="title-chapter">{{ livre.titre }}</h1>
-        </a>
-        {% if app.user %}
-        {% if is_granted('ROLE_ADMIN') %}
-        <a class="link-edit" href="{{ path('app_chapitre_edit', {'id': chapitre.id}) }}">Modifier</a>
-        {% endif %}
-        {% endif %}
-        <h2 class="sm-title">Chapitre {{ chapitre.numeroChapitre }} ... {{ chapitre.titre }}</h2>
+
+            <a href="{{ path('app_livre_show', {'id': livre.id}) }}">
+                <h1 class="title-chapter">{{ livre.titre }}</h1>
+            </a>
+
+            <div class="Bigborder">
+                <div class="border">
+                </div>
+            </div>
+
+            <h2 class="sm-title">Chapitre {{ chapitre.numeroChapitre }} ... {{ chapitre.titre }}</h2>
+
+        
     </div>
-    <div class="Bigborder">
-        <div class="border">
-        </div>
+ <div class="Bigborder">
+    <div class="border">
     </div>
+</div> 
 </section>
 
 <section id="contentChaptershow">

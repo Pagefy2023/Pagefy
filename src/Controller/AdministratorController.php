@@ -2,13 +2,16 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\User;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AdministratorController extends AbstractController
 {
-    #[Route('/administrator', name: 'app_administrator')]
+    #[Route('/moderator/administrator', name: 'app_administrator')]
     public function index(): Response
     {
         
@@ -17,4 +20,6 @@ class AdministratorController extends AbstractController
             'controller_name' => 'AdministratorController',
         ]);
     }
+
+    
 }

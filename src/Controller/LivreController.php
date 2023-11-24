@@ -20,7 +20,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 #[Route('/livre')]
 class LivreController extends AbstractController
 {
-    #[Route('/admin/', name: 'app_livre_index', methods: ['GET'])]
+    #[Route('/moderator/', name: 'app_livre_index', methods: ['GET'])]
     public function index(LivreRepository $repo, #[Autowire('%couverture_directory%')] string $couvertureDir, Request $request, Chapitre $chapitre): Response
     {
         
@@ -68,7 +68,7 @@ class LivreController extends AbstractController
     ]);
 }
 
-    #[Route('/admin/new', name: 'app_livre_new', methods: ['GET', 'POST'])]
+    #[Route('/moderator/new', name: 'app_livre_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager, #[Autowire('%couverture_directory%')] string $couvertureDir): Response
     {
         $livre = new Livre();
@@ -99,7 +99,7 @@ class LivreController extends AbstractController
         ]);
     }
 
-    #[Route('/admin/{id}/edit', name: 'app_livre_edit', methods: ['GET', 'POST'])]
+    #[Route('/moderator/{id}/edit', name: 'app_livre_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Livre $livre, EntityManagerInterface $entityManager, #[Autowire('%couverture_directory%')] string $couvertureDir): Response
     {
         $form = $this->createForm(LivreType::class, $livre);
@@ -138,7 +138,7 @@ class LivreController extends AbstractController
     }
 
 
-    #[Route('/{id}/delete', name: 'app_livre_delete', methods: ['POST'])]
+    #[Route('/moderator/{id}/delete', name: 'app_livre_delete', methods: ['POST'])]
     public function delete(Request $request, Livre $livre, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$livre->getId(), $request->request->get('_token'))) {

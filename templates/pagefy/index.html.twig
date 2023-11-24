@@ -17,24 +17,36 @@
 	</section>
 
 	<section id="feature" class="section-p1">
-		<div class="fe-box">
-			<h6 class=" fe-box-h6 ">Adventure</h6>
-		</div>
-		<div class="fe-box">
-			<h6 class=" fe-box-h6 ">Roman</h6>
-		</div>
-		<div class="fe-box">
-			<h6 class=" fe-box-h6 ">Mythe</h6>
-		</div>
-		<div class="fe-box">
-			<h6 class=" fe-box-h6 ">Conte</h6>
-		</div>
-		<div class="fe-box">
-			<h6 class=" fe-box-h6 ">Biographie</h6>
-		</div>
-		<div class="fe-box">
-			<h6 class=" fe-box-h6 ">Chronique</h6>
-		</div>
+			<div class="fe-box">
+		<a href="http://127.0.0.1:8000/categorie/all/2">
+				<h6 class=" fe-box-h6 ">Adventure</h6>
+		</a>	
+			</div>
+			<div class="fe-box">
+		<a href="http://127.0.0.1:8000/categorie/all/3">
+				<h6 class=" fe-box-h6 ">Roman</h6>
+		</a> 
+			</div>
+			<div class="fe-box">
+		<a href="http://127.0.0.1:8000/categorie/all/4">
+				<h6 class=" fe-box-h6 ">Mythe</h6>
+		</a>
+			</div>
+			<div class="fe-box">
+		<a href="http://127.0.0.1:8000/categorie/all/5">
+				<h6 class=" fe-box-h6 ">Conte</h6>
+		</a>  
+			</div>
+			<div class="fe-box">
+		<a href="http://127.0.0.1:8000/categorie/all/6">
+				<h6 class=" fe-box-h6 ">Biographie</h6>
+		</a> 
+			</div>
+			<div class="fe-box">
+		<a href="http://127.0.0.1:8000/categorie/all/7">
+				<h6 class=" fe-box-h6 ">Chronique</h6>
+		</a> 
+			</div>
 	</section>
 
 	<section id="book1" class="section-p1">
@@ -43,12 +55,14 @@
 		<div class="book-container">
         {% for livre in livres|slice(0, 4) %}
 			<div class="book">
+			<a href="{{ path('app_livre_show', {'id': livre.id}) }}">
 				<img src="{{ asset('assets/img/' ~ livre.couverture) }}" alt="{{ livre.titre }}">
 				<div class="des">
 					<span>{{livre.categorie}}</span>
 					<h4>{{ livre.titre }}</h4>
 					<h5>{{livre.auteur}}</h5>
 				</div>
+				</a>
 			</div>
         {% endfor %}
 		</div>

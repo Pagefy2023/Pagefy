@@ -33,12 +33,17 @@
             
             {% endfor %}
             <div class="book-links">
+            {% if is_granted('ROLE_USER_ABONNEE')  %}
                 {% if chapitres is not empty %}
                 <a class="link-read" href="{{ path('app_chapitre_show', { 'id': chapitres[0].id }) }}">Lire</a>
                 {% endif %}
+            {% endif %}
+            {# {% if is_granted('ROLE_USER')  %}
+                <a class="link-read" href="{{ path('app_chapitre_show') }}">Lire</a>
+            {% endif %} #}
 
                 {% if app.user %}
-                {% if is_granted('ROLE_ADMIN') %}
+                {% if is_granted('ROLE_MODERATOR') %}
                 
                     <a class="link-edit" href="{{ path('app_livre_edit', {'id': livre.id}) }}">Modifier</a>
                     <a class="link-edit" href="{{ path('app_chapitre_new', {'id': livre.id}) }}">Nouveau Chapitre</a>

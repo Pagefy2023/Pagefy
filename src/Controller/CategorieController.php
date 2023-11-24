@@ -17,7 +17,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 #[Route('/categorie')]
 class CategorieController extends AbstractController
 {
-    #[Route('/admin/', name: 'app_categorie_index', methods: ['GET'])]
+    #[Route('/moderator/', name: 'app_categorie_index', methods: ['GET'])]
     public function index(CategorieRepository $categorieRepository): Response
     {
         
@@ -47,7 +47,7 @@ public function search( CategorieRepository $repo, LivreRepository $repoLivre, $
 
 
 
-    #[Route('/admin/new', name: 'app_categorie_new', methods: ['GET', 'POST'])]
+    #[Route('/moderator/new', name: 'app_categorie_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $categorie = new Categorie();
@@ -67,7 +67,7 @@ public function search( CategorieRepository $repo, LivreRepository $repoLivre, $
         ]);
     }
 
-    #[Route('/admin/{id}', name: 'app_categorie_show', methods: ['GET'])]
+    #[Route('/moderator/{id}', name: 'app_categorie_show', methods: ['GET'])]
     public function show(Categorie $categorie): Response
     {
         return $this->render('categorie/show.html.twig', [
@@ -75,7 +75,7 @@ public function search( CategorieRepository $repo, LivreRepository $repoLivre, $
         ]);
     }
 
-    #[Route('/admin/{id}/edit', name: 'app_categorie_edit', methods: ['GET', 'POST'])]
+    #[Route('/moderator/{id}/edit', name: 'app_categorie_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Categorie $categorie, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(CategorieType::class, $categorie);
@@ -93,14 +93,21 @@ public function search( CategorieRepository $repo, LivreRepository $repoLivre, $
         ]);
     }
 
-    #[Route('/{id}', name: 'app_categorie_delete', methods: ['POST'])]
-    public function delete(Request $request, Categorie $categorie, EntityManagerInterface $entityManager): Response
-    {
-        if ($this->isCsrfTokenValid('delete'.$categorie->getId(), $request->request->get('_token'))) {
-            $entityManager->remove($categorie);
-            $entityManager->flush();
+
+    #[Route('/moderator/{id}', name: 'app_categorie_delete', methods: ['POST'])]
+public function delete(Request $request, Categorie $categorie, EntityManagerInterface $entityManager): Response
+{
+    if ($this->isCsrfTokenValid('delete' . $categorie->getId(), $request->request->get('_token'))) {
+        // Supprimer la catégorie et la synchroniser avec les livres
+        foreach ($categorie->getLivres() as $livre) {
+            $livre->removeCategorie($categorie);
         }
 
-        return $this->redirectToRoute('app_categorie_index', [], Response::HTTP_SEE_OTHER);
+        $entityManager->remove($categorie);
+        $entityManager->flush();
     }
+
+    return $this->redirectToRoute('app_categorie_index', [], Response::HTTP_SEE_OTHER);
+}
+
 }

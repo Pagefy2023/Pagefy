@@ -13,11 +13,9 @@
             <tr>
                 <th>Titre</th>
                 <th>Categorie</th>
-                <th>Résumé</th>
                 <th>Couverture</th>
                 <th>Date_parution</th>
                 <th>Auteur</th>
-                <th>Editeur</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -26,11 +24,9 @@
             <tr>
                 <td class="table-cell">{{ livre.titre }}</td>
                 <td class="table-cell">{{ livre.categorie }}</td>
-                <td class="table-cell">{{ livre.resume|split(' ')|slice(0, 15)|join(' ')  }}</td>
                 <td class="table-cell"><img src="{{ asset('assets/img/' ~ livre.couverture ) }}" width="30px" alt=""></td>
-                <td class="table-cell">{{ livre.dateParution ? livre.dateParution|date('Y-m-d H:i:s') : '' }}</td>
+                <td class="table-cell">{{ livre.dateParution ? livre.dateParution|date('d-m-Y') : '' }}</td>
                 <td class="table-cell">{{ livre.auteur }}</td>
-                <td class="table-cell">{{ livre.editeur }}</td>
                 <td class="table-cell">
                 <div class="align-items">
                     <a href="{{ path('app_livre_show', {'id': livre.id}) }}" class="button-link">Voir</a>

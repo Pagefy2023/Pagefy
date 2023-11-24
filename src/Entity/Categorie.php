@@ -18,10 +18,15 @@ class Categorie
     #[ORM\Column(length: 255)]
     private ?string $nom = null;
 
-    #[ORM\ManyToMany(targetEntity: Livre::class, mappedBy: 'categorie')]
-    private Collection $livres;
+    // #[ORM\ManyToMany(targetEntity: Livre::class, mappedBy: 'categorie')]
+    // private Collection $livres;
 
-    public function __construct()
+    #[ORM\ManyToMany(targetEntity: Livre::class, inversedBy: "categories")]
+#[ORM\JoinTable(name: "livres_categories")]
+private Collection $livres;
+
+
+    public function __construct()   
     {
         $this->livres = new ArrayCollection();
     }

@@ -29,7 +29,7 @@
                 <li><a href="{{path('app_pagefy')}}" class="active" >Accueil</a></li>
                 <li><a href="{{path('livre_search')}}"><i class="bi bi-search"></i> Recherche </a></li>
                 <li><a href="{{ path('app_categorie_search') }}">Categories</a></li>
-                <li><a href="#">Abonnement</a></li>
+                {# <li><a href="{{ path('app_abonnement', {'id': user.id}) }}">Abonnement</a></li> #}
                 {% if app.user %}
                 {% if is_granted('ROLE_ADMIN')  %}
                     <li><a href="{{path('app_administrator')}}">Admin</a></li>
